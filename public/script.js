@@ -7,7 +7,7 @@ const AllTeachers     = {
   run: AllTeachersFn
 }
 const AddTeacher      = {
-  render: () =>  `<div class="-add-teacher"><div class="-title">add teacher</div><div class="-tabs -inline_block -vamiddle"><div class="-tab -inlineblock -posrel -vamiddle active"> <span>basic information</span></div><div class="-tab -inlineblock -posrel -vamiddle"> <span>account information</span></div><div class="-tab -inlineblock -posrel -vamiddle"> <span>social information</span></div></div><div class="-tab-contents"><div class="-tab-content active"><form><div class="form-group -inlineblock -vatop -w50"> <input type="text" required="required" /> <label for="input" class="control-label">Full Name</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"> <input type="text" required="required" /> <label for="input" class="control-label">Address</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"> <input type="number" required="required" /> <label for="input" class="control-label">Mobile Number</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"> <input type="text" required="required" /> <label for="input" class="control-label">Full Name</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"><textarea required="required"></textarea><label for="textarea" class="control-label">Description</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"> <select id="gender"><option value="male">Male</option><option value="female">Female</option> </select> <label for="select" class="control-label">Gender</label><i class="bar"></i></div></form></div><div class="-tab-content">account information</div><div class="-tab-content">social information</div></div></div>`,
+  render: () =>  `<div class="-add-teacher -page"><div class="-title">add teacher</div><div class="-tabs -inline_block -vamiddle"><div class="-tab -inlineblock -posrel -vamiddle active"> <span>basic information</span></div><div class="-tab -inlineblock -posrel -vamiddle"> <span>account information</span></div><div class="-tab -inlineblock -posrel -vamiddle"> <span>social information</span></div></div><div class="-tab-contents"><div class="-tab-content active"><form><div class="form-group -inlineblock -vatop"> <input type="text" required="required" /> <label for="input" class="control-label">Full Name</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"> <input type="text" required="required" /> <label for="input" class="control-label">Address</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"> <input type="number" required="required" /> <label for="input" class="control-label">Mobile Number</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"> <input type="text" required="required" /> <label for="input" class="control-label">Full Name</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"><textarea required="required"></textarea><label for="textarea" class="control-label">Description</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"> <select id="gender"><option value="male">Male</option><option value="female">Female</option> </select> <label for="select" class="control-label">Gender</label><i class="bar"></i></div></form></div><div class="-tab-content">account information</div><div class="-tab-content">social information</div></div></div>`,
   run: AddTeacherFn
 }
 const EditTeacher     = {
@@ -51,42 +51,9 @@ const CourseProfile   = {
   run: CourseProfileFn
 }
 
-const Page1Component = {
-  render: () => {
-    return `
-      <section>
-        <h1>Page 1</h1>
-      </section>
-    `
-  }
-}
-
-const Page2Component = {
-  render: () => {
-    return `
-      <section>
-        <h1>Page 2</h1>
-      </section>
-    `
-  }
-}
-
-const ErrorComponent = {
-  render: () => {
-    return `
-      <section>
-        <h1>Error</h1>
-        <p>This is just a test</p>
-      </section>
-    `
-  }
-}
-
 // Routes
 const routes = [
   { path: '/', component: HomeComponent },
-  { path: '/page1', component: Page1Component },
-  { path: '/page2', component: Page2Component },
   { path: '/all-teachers', component: AllTeachers },
   { path: '/add-teacher', component: AddTeacher },
   { path: '/edit-teacher', component: EditTeacher },

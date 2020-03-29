@@ -12,5 +12,21 @@
 }
 
 .-add-teacher .form-group {
-  
+  width: 49%;
+  margin: 20px 1%
+}
+
+.-add-teacher .form-group:nth-child(odd) {
+  margin-left: unset;
+}
+
+.-add-teacher .form-group:nth-child(even) {
+  margin-right: unset;
+}
+
+@media screen and (max-width: 767px) {
+  .-add-teacher .form-group {
+    width: 100%;
+    margin: 20px 0px;
+  }
 }

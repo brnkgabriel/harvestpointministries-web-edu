@@ -2,6 +2,15 @@
 .-content {
   width: calc(100% - 220px);
   padding: 15px;
+  background-color: var(--bg-color)
+}
+
+.-content .-page {
+  padding: 15px;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.065);
+  border-radius: 0.25rem;
+  height: 100%;
 }
 
 .-aside.-icons-only+.-content {

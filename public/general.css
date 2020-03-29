@@ -27,6 +27,7 @@
   --headerColor: #25313e;
   --asideColor: #41586e;
   --gray: #adbece;
+  --bg-color: #f5f7fa;
   --info: #4cc0c1;
   --warning: #ffc333;
   --primary: #2962FF;
@@ -120,14 +121,17 @@ html, body, .-container {
 .-tabs .-tab {
   padding: 5px 0px;
   margin: 0 8px;
-  text-align: center;
+  text-align: left;
+  width: fit-content;
   cursor: pointer;
   position: relative;
   text-transform: uppercase;
   font-size: .9em;
   font-weight: 500;
   color: inherit;
-  transition: color 0.1s cubic-bezier(0.075, 0.82, 0.165, 1)
+  transition: color 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: inline-block;
+  vertical-align: middle
 }
 
 .-tabs .-tab.active {
@@ -169,7 +173,7 @@ html, body, .-container {
 }
 
 .-tab-contents {
-
+  margin-top: 10px;
 }
 .-tab-contents .-tab-content {
   display: none;
@@ -177,4 +181,12 @@ html, body, .-container {
 
 .-tab-contents .-tab-content.active {
   display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .-tabs .-tab {
+    margin: 5px 0;
+    display: block;
+    vertical-align: middle
+  }
 }
