@@ -1,0 +1,8 @@
+
+.-content {
+  width: calc(100% - 220px)
+}
+
+.-aside.-icons-only+.-content {
+  width: calc(100% - 60px)
+}

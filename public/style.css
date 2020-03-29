@@ -1,71 +1,30 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900&display=swap');
 
-*,*::before,*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import url('./icons.css');
+@import url('./general.css');
+@import url('./header.css');
+@import url('./aside.css');
+@import url('./content.css');
 
-:root {
-  --dark: #0288D1;
-  --darker: #01579b;
-  --light: #039BE5;
-}
-
-html, body, .-container {
+.-container {
   width: 100%;
+  overflow-x: hidden
+}
+
+.-container, .-container *, .-container *::before, .-container *::after {
+  transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.-container .-signup {
+
+}
+.-container .-pages {
   height: 100%;
 }
 
-.-container {
-  background-color: var(--dark);
-  background: radial-gradient(circle, var(--light), var(--darker));
-  font-family: 'Roboto';
+
+.-container .-pages .-main {
+  height: calc(100% - 50px)
 }
 
-.-posrel {
-  position: relative
-}
-
-.-posabs {
-  position: absolute
-}
-
-.-inlineblock {
-  display: inline-block;
-}
-
-.-vatop {
-  vertical-align: top
-}
-
-.-vamiddle {
-  vertical-align: middle;
-}
-
-.-vabottom {
-  vertical-align: bottom;
-}
-
-.-row {
-  text-align: center;
-}
-
-.-centerbyposition {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%)
-}
-
-.-authentication {
-  width: 95%;
-}
-
-.-authentication .-title {
-  color: white;
-  font-weight: 400;
-  font-size: 2em;
-  width: 100%;
-  margin: 0 auto;
+.-container .-pages .-main .-col {
+  height: 100%;
 }

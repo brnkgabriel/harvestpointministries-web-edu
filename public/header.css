@@ -1,0 +1,106 @@
+
+.-header {
+  height: 50px;
+  background-color: var(--headerColor);
+  color: white;
+}
+.-header .-settings {
+  right: 1%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.-header .-settings .-cta {
+  cursor: pointer;
+  color: #adbece;
+  height: 50px;
+  line-height: 40px;
+}
+.-header .-settings .-cta:hover {
+  color: white;
+}
+
+.-header .-settings .-cta span {
+  margin: 5px;
+}
+.-header .-settings .icon-gear {
+  width: 30px;
+  height: 22px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.35)
+}
+.-header .-settings .icon-gear::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.-header .-settings .icon-down {
+}
+
+.-header .-settings .-detail {
+  color: black;
+  top: 50px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  left: 110%;
+  transition: left 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+.-header .-settings .-detail.active {
+  left: 0;
+}
+
+.-header .-settings .-detail .-item {
+  padding: 5px 15px;
+  text-transform: capitalize;
+  cursor: pointer
+}
+
+.-header .-settings .-detail .-item:hover {
+  background-color: #f1f1f1;
+  color: #717171
+}
+
+
+.-header .-logo {
+  width: 220px;
+  height: 50px;
+  padding: 10px;
+  white-space: nowrap
+}
+
+.-header .-logo img {
+  height: 100%;
+}
+
+.-header .-logo .-name {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .-header .-logo {
+    left: 50%;
+    transform: translateX(-50%)
+  }
+
+  .-header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .-header .-settings .-cta span.-name,
+  .-header .-settings .-cta span.icon-down {
+    display: none;
+  }
+
+  .-header .-settings .-cta {
+    height: unset
+  }
+}
