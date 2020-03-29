@@ -1,6 +1,9 @@
 const HomeComponent   = { render: () =>  `<h1>Home</h1>` }
 const AllTeachers     = { render: () =>  `<h1>All Teachers</h1>` }
-const AddTeacher      = { render: () =>  `<h1>Add Teacher</h1>` }
+const AddTeacher      = {
+  render: () =>  `<div class="-add-teacher"><div class="-title">add teacher</div><div class="-tabs -inline_block -vamiddle"><div class="-tab -inlineblock -posrel -vamiddle active"> <span>basic information</span></div><div class="-tab -inlineblock -posrel -vamiddle"> <span>account information</span></div><div class="-tab -inlineblock -posrel -vamiddle"> <span>social information</span></div></div><div class="-tab-contents"><div class="-tab-content active"><form><div class="form-group -inlineblock -vatop -w50"> <input type="text" required="required" /> <label for="input" class="control-label">Full Name</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"> <input type="text" required="required" /> <label for="input" class="control-label">Address</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"> <input type="number" required="required" /> <label for="input" class="control-label">Mobile Number</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"> <input type="text" required="required" /> <label for="input" class="control-label">Full Name</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"><textarea required="required"></textarea><label for="textarea" class="control-label">Description</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop -w50"> <select id="gender"><option value="male">Male</option><option value="female">Female</option> </select> <label for="select" class="control-label">Gender</label><i class="bar"></i></div></form></div><div class="-tab-content">account information</div><div class="-tab-content">social information</div></div></div>`,
+  run: AddTeacher
+}
 const EditTeacher     = { render: () =>  `<h1>Edit Teacher</h1>` }
 const TeacherProfile  = { render: () =>  `<h1>Teacher Profile</h1>` }
 const AllStudents     = { render: () =>  `<h1>All Students</h1>` }

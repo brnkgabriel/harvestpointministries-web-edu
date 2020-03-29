@@ -7,6 +7,10 @@
   border: none;
 }
 
+*, *::before, *::after {
+  transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 :root {
   --one: calc((100% * 1) / 12);
   --two: calc((100% * 2) / 12);
@@ -22,11 +26,12 @@
   --twelve: 100%;
   --headerColor: #25313e;
   --asideColor: #41586e;
-  --disabledFontColor: #adbece;
+  --gray: #adbece;
   --info: #4cc0c1;
   --warning: #ffc333;
-  --primary: #65bd77;
+  --primary: #2962FF;
   --danger: #fb6b5b;
+  --success: #65bd77;
 }
 
 html {
@@ -84,6 +89,14 @@ html, body, .-container {
   vertical-align: baseline
 }
 
+.-w33 {
+  width: calc(100% / 3);
+}
+
+.-w50 {
+  width: 50%;
+}
+
 .-hide {
   display: none
 }
@@ -100,4 +113,68 @@ html, body, .-container {
 
 .arrow::after {
   border-width: 7px;
+}
+
+/* TABS */
+
+.-tabs .-tab {
+  padding: 5px 0px;
+  margin: 0 8px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  font-size: .9em;
+  font-weight: 500;
+  color: inherit;
+  transition: color 0.1s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+.-tabs .-tab.active {
+  color: var(--primary)
+}
+
+.-tabs .-tab:first-child {
+  margin-left: 0;
+}
+
+.-tabs .-tab:last-child {
+  margin-right: 0;
+}
+
+.-tabs .-tab::before,
+.-tabs .-tab::after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.-tabs .-tab::before {
+  background-color: var(--gray);
+  z-index: 0;
+}
+
+.-tabs .-tab::after {
+  background-color: var(--primary);
+  z-index: 1;
+  width: 0%;
+}
+
+.-tabs .-tab.active::after {
+  width: 100%;
+}
+
+.-tab-contents {
+
+}
+.-tab-contents .-tab-content {
+  display: none;
+}
+
+.-tab-contents .-tab-content.active {
+  display: block;
 }

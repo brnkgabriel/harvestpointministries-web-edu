@@ -1,8 +1,19 @@
 
 .-content {
-  width: calc(100% - 220px)
+  width: calc(100% - 220px);
+  padding: 15px;
 }
 
 .-aside.-icons-only+.-content {
   width: calc(100% - 60px)
+}
+
+
+@media screen and (max-width: 767px) {
+  .-content {
+    width: 100%;
+  }
+  .-aside.-icons-only+.-content {
+    width: 100%;
+  }
 }

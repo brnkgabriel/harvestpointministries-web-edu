@@ -1,0 +1,16 @@
+
+@import url('../../general.css');
+@import url('../../form-fields.css');
+
+.-add-teacher {
+}
+
+.-add-teacher .-title {
+  font-size: 20px;
+  margin: 0 0 5px;
+  text-transform: capitalize
+}
+
+.-add-teacher .form-group {
+  
+}

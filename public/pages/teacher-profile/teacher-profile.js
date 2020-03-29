@@ -1,0 +1,2 @@
+var TeacherProfile = function () {
+}

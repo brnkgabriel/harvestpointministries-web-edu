@@ -1,0 +1,2 @@
+var EditTeacher = function () {
+}

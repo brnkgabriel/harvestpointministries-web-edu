@@ -1,0 +1,2 @@
+var EditCourse = function () {
+}

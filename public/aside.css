@@ -123,8 +123,8 @@
   position: absolute;
   width: 8px;
   height: 8px;
-  border-top: 2px solid var(--disabledFontColor);
-  border-right: 2px solid var(--disabledFontColor);
+  border-top: 2px solid var(--gray);
+  border-right: 2px solid var(--gray);
   top: 50%;
   right: 8%;
   transform: translateY(-50%) rotate(135deg);
@@ -147,7 +147,7 @@
   display: inline-block;
   vertical-align: middle;
   margin-left: 10px;
-  color: var(--disabledFontColor);
+  color: var(--gray);
   text-transform: capitalize;
   font-weight: 400;
   position: static
@@ -193,7 +193,7 @@
 .-aside .-mid .-mid-item .-sub-item .-sub {
   padding-left: 57px;
   text-transform: capitalize;
-  color: var(--disabledFontColor);
+  color: var(--gray);
   line-height: 44px;
   font-weight: 400;
   font-size: 0.9em;
@@ -221,8 +221,8 @@
 .-aside .-mid .-mid-item .-sub-item .-sub::after {
   width: 8px;
   height: 8px;
-  border-top: 2px solid var(--disabledFontColor);
-  border-right: 2px solid var(--disabledFontColor);
+  border-top: 2px solid var(--gray);
+  border-right: 2px solid var(--gray);
   left: 22px;
   transform: translate(-50%,-50%) rotate(45deg)
 }
@@ -258,8 +258,8 @@
   position: absolute;
   width: 8px;
   height: 8px;
-  border-top: 2px solid var(--disabledFontColor);
-  border-right: 2px solid var(--disabledFontColor);
+  border-top: 2px solid var(--gray);
+  border-right: 2px solid var(--gray);
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%) rotate(-135deg)
@@ -280,9 +280,10 @@
 
 @media screen and (max-width: 767px) {
   .-aside {
-    position: absolute;
+    position: fixed;
     bottom: 50px;
     height: unset !important;
+    z-index: 2
   }
   .-aside .-foot {
     position: absolute;
@@ -297,5 +298,9 @@
     position: absolute;
     width: 100%;
     background-color: var(--asideColor)
+  }
+  .-aside.-icons-only .-mid .-mid-item .-sub-item {
+    top: 50%;
+    transform: translateY(-50%)
   }
 }
