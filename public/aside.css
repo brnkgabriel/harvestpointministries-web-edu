@@ -198,7 +198,9 @@
   font-weight: 400;
   font-size: 0.9em;
   background-color: rgba(0,0,0,0);
-  position: relative
+  position: relative;
+  display: block;
+  text-decoration: none;
 }
 
 .-aside .-mid .-mid-item .-sub-item .-sub::before,
