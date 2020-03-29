@@ -1,4 +1,4 @@
-var AddTeacher = function () {
+var AddTeacherFn = function () {
   var tab_contents  = document.querySelectorAll('.-tab-content')
   var tabs          = document.querySelectorAll('.-tab')
 

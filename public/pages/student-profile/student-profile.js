@@ -1,2 +1,2 @@
-var StudentProfile = function () {
+var StudentProfileFn = function () {
 }

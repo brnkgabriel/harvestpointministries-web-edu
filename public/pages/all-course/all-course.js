@@ -1,2 +1,2 @@
-var AllCourse = function () {
+var AllCourseFn = function () {
 }

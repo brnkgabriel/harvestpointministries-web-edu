@@ -1,2 +1,2 @@
-var AllStudents = function () {
+var AllStudentsFn = function () {
 }

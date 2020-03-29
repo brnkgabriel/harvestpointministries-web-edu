@@ -1,2 +1,2 @@
-var EditCourse = function () {
+var EditCourseFn = function () {
 }

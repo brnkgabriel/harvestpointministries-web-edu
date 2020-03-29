@@ -1,3 +1,3 @@
-var AddCourse = function () {
+var AddCourseFn = function () {
   
 }

@@ -1,2 +1,2 @@
-var EditStudent = function () {
+var EditStudentFn = function () {
 }
