@@ -38,7 +38,8 @@
 .-aside.-icons-only .-mid .-mid-item,
 .-aside.-icons-only .-foot {
   height: 60px;
-  overflow: hidden
+  overflow: hidden;
+  border: unset
 }
 
 .-aside.-icons-only .-mid .-mid-item:hover {
@@ -276,5 +277,23 @@
 }
 
 @media screen and (max-width: 767px) {
-  
+  .-aside {
+    position: absolute;
+    bottom: 50px;
+    height: unset !important;
+  }
+  .-aside .-foot {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+  }
+  .-aside.-icons-only .-mid {
+    bottom: 60px;
+  }
+  .-aside .-mid {
+    bottom: 44px;
+    position: absolute;
+    width: 100%;
+    background-color: var(--asideColor)
+  }
 }
