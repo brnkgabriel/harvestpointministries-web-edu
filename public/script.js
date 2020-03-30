@@ -7,7 +7,7 @@ const AllTeachers     = {
   run: AllTeachersFn
 }
 const AddTeacher      = {
-  render: () =>  `<div class="-add-teacher -page"><div class="-title">add teacher</div><div class="-tabs -inline_block -vamiddle"><div class="-tab -inlineblock -posrel -vamiddle active"> <span>basic information</span></div><div class="-tab -inlineblock -posrel -vamiddle"> <span>account information</span></div><div class="-tab -inlineblock -posrel -vamiddle"> <span>social information</span></div></div><div class="-tab-contents"><div class="-tab-content active"><form><div class="form-group -inlineblock -vatop"> <input type="text" required="required" /> <label for="input" class="control-label">Full Name</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"> <input type="text" required="required" /> <label for="input" class="control-label">Address</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"> <input type="number" required="required" /> <label for="input" class="control-label">Mobile Number</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"> <input type="text" required="required" /> <label for="input" class="control-label">Full Name</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"><textarea required="required"></textarea><label for="textarea" class="control-label">Description</label><i class="bar"></i></div><div class="form-group -inlineblock -vatop"> <select id="gender"><option value="male">Male</option><option value="female">Female</option> </select> <label for="select" class="control-label">Gender</label><i class="bar"></i></div></form></div><div class="-tab-content">account information</div><div class="-tab-content">social information</div></div></div>`,
+  render: () =>  MinifiedHTML['AddTeacher'],
   run: AddTeacherFn
 }
 const EditTeacher     = {
@@ -23,7 +23,7 @@ const AllStudents     = {
   run: AllStudentsFn
 }
 const AddStudent      = {
-  render: () =>  `<h1>Add Student</h1>`,
+  render: () =>  MinifiedHTML['AddStudent'],
   run: AddStudentFn
 }
 const EditStudent     = {
