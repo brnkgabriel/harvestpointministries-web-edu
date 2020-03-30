@@ -90,12 +90,56 @@ html, body, .-container {
   vertical-align: baseline
 }
 
-.-w33 {
-  width: calc(100% / 3);
+.-w100 {
+  width: 100%
+}
+
+.-w90 {
+  width: 90%
+}
+
+.-w80 {
+  width: 80%;
+}
+
+.-w75 {
+  width: 75%;
+}
+
+.-w70 {
+  width: 70%;
+}
+
+.-w60 {
+  width: 60%;
 }
 
 .-w50 {
   width: 50%;
+}
+
+.-w40 {
+  width: 40%;
+}
+
+.-w33 {
+  width: calc(100% / 3);
+}
+
+.-w30 {
+  width: 30%
+}
+
+.-w25 {
+  width: 25%;
+}
+
+.-w20 {
+  width: 20%;
+}
+
+.-w10 {
+  width: 10%;
 }
 
 .-hide {
@@ -115,6 +159,13 @@ html, body, .-container {
 .arrow::after {
   border-width: 7px;
 }
+
+div>.-title {
+  font-size: 20px;
+  margin: 0 0 5px;
+  text-transform: capitalize
+}
+
 
 /* TABS */
 

@@ -1,0 +1,42 @@
+
+@import url('../../general.css');
+@import url('../../form-fields.css');
+.-student-profile {
+
+}
+.-student-profile .-profile {
+  border: 16px solid white;
+}
+.-student-profile .-profile.-bio {
+  width: 25%;
+}
+
+.-student-profile .-profile.-details {
+  width: 75%;
+}
+.-student-profile .-bio img {
+  width: 100%;
+}
+.-student-profile .-bio .-data {
+
+}
+.-student-profile .-bio .-data > div {
+  margin: 10px 0;
+}
+
+.-student-profile .-bio .-data > div .-top {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.-student-profile .-bio .-data > div .-value {
+
+}
+
+
+@media screen and (max-width: 767px) {
+  .-student-profile .-profile {
+    width: 100% !important;
+  }
+}

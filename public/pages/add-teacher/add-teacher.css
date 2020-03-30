@@ -5,12 +5,6 @@
 .-add-teacher {
 }
 
-.-add-teacher .-title {
-  font-size: 20px;
-  margin: 0 0 5px;
-  text-transform: capitalize
-}
-
 .-add-teacher .form-group {
   width: 49%;
   margin: 20px 1%

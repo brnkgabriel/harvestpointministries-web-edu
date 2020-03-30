@@ -7,6 +7,8 @@
 @import url('./content.css');
 @import url('./pages/add-teacher/add-teacher.css');
 @import url('./pages/add-student/add-student.css');
+@import url('./pages/edit-student/edit-student.css');
+@import url('./pages/student-profile/student-profile.css');
 
 .-container {
   width: 100%;
@@ -28,4 +30,10 @@
 
 .-container .-pages .-main .-col {
   height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .-container .-pages .-main {
+    height: unset !important
+  }
 }

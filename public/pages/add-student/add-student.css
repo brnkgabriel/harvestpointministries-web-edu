@@ -5,12 +5,6 @@
 .-add-student {
 }
 
-.-add-student .-title {
-  font-size: 20px;
-  margin: 0 0 5px;
-  text-transform: capitalize
-}
-
 .-add-student .form-group {
   width: 49%;
   margin: 20px 1%

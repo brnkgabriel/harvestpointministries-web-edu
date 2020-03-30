@@ -27,11 +27,11 @@ const AddStudent      = {
   run: AddStudentFn
 }
 const EditStudent     = {
-  render: () =>  `<h1>Edit Student</h1>`,
+  render: () =>  MinifiedHTML['EditStudent'],
   run: EditStudentFn
 }
 const StudentProfile  = {
-  render: () =>  `<h1>Student Profile</h1>`,
+  render: () =>  MinifiedHTML['StudentProfile'],
   run: StudentProfileFn
 }
 const AllCourse       = {
@@ -81,6 +81,8 @@ const router = () => {
 
   document.getElementById('app').innerHTML = component.render()
   component.run()
+  // Util should always run after component script so dom elements load before Javascript starts
+  Util()
 }
 
 window.addEventListener('hashchange', router)

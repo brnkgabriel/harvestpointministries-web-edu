@@ -303,4 +303,10 @@
     top: 50%;
     transform: translateY(-50%)
   }
+
+  .-aside.-offscreen {
+    transform: translate(-100%,-100%);
+    left: 0;
+    bottom: 0px;
+  }
 }
