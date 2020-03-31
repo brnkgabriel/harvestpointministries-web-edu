@@ -48,7 +48,28 @@
         </div>
         <div class="-tab-contents">
           <div class="-tab-content active">
-            account information
+            <form>
+              <div class="form-group">
+                <input type="text" required="required" id="full-name" value="Fly Zend" />
+                <label for="input" class="control-label">Full Name</label><i class="bar"></i>
+              </div><div class="form-group">
+                <input type="text" required="required" id="email" value="fly@gmail.com" />
+                <label for="input" class="control-label">Email</label><i class="bar"></i>
+              </div><div class="form-group">
+                <input type="text" required="required" id="codename" value="fz" />
+                <label for="input" class="control-label">Codename (alias)</label><i class="bar"></i>
+              </div><div class="form-group">
+                <select id="gender" value="male">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+                <label for="select" class="control-label">Gender</label><i class="bar"></i>
+              </div><div class="form-group">
+                <textarea required="required" id="description">I love coding</textarea>
+                <label for="textarea" class="control-label">Description</label><i class="bar"></i>
+              </div>
+              <button class="btn" type="submit">update</button>
+            </form>
           </div>
           <div class="-tab-content">
             course information

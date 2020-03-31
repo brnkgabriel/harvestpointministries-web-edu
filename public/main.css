@@ -9,6 +9,7 @@
 @import url('./pages/add-student/add-student.css');
 @import url('./pages/edit-student/edit-student.css');
 @import url('./pages/student-profile/student-profile.css');
+@import url('./pages/all-students/all-students.css');
 
 .-container {
   width: 100%;

@@ -540,7 +540,8 @@ body{
   left: calc(1% + 5px);
   transform: translateY(-50%) rotate(0deg);
   cursor: pointer;
-  z-index: 1
+  z-index: 1;
+  display: none;
 }
 
 #nav-icon span {
@@ -580,4 +581,11 @@ body{
 #nav-icon.open span:nth-child(3) {
   top: 9px;
   transform: rotate(-135deg);
+}
+
+
+@media screen and (max-width: 767px) {
+  #nav-icon {
+    display: block;
+  }
 }

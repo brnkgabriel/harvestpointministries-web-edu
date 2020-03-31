@@ -1,0 +1,52 @@
+
+.-all-students {
+
+}
+.-all-students .-table {
+
+}
+.-all-students .-table .-row {
+  padding: 10px 0;
+  cursor: pointer
+}
+
+.-all-students .-table .-row:hover .-col {
+  text-decoration: underline
+}
+
+.-all-students .-table .-row:nth-child(odd) {
+  background-color: #f3f3f3
+}
+
+.-all-students .-table .-row.-head {
+
+}
+.-all-students .-table .-row .-col {
+  display: inline-block;
+  vertical-align: middle;
+  width: 25%;
+  padding: 5px 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden
+}
+
+.-all-students .-table .-row .-col.-position {
+  width: 20%
+}
+.-all-students .-table .-row .-col.-codename {
+  width: 35%
+}
+
+.-all-students .-table .-row .-col.-aggregate {
+  width: 20%;
+}
+
+.-all-students .-table .-row .-col.-prize {
+  width: 20%;
+}
+
+.-all-students .-table .-row.-head  .-col {
+  text-transform: capitalize;
+  font-weight: 600;
+}

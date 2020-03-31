@@ -19,7 +19,7 @@ const TeacherProfile  = {
   run: TeacherProfileFn
 }
 const AllStudents     = {
-  render: () =>  `<h1>All Students</h1>`,
+  render: () =>  MinifiedHTML['AllStudents'],
   run: AllStudentsFn
 }
 const AddStudent      = {
