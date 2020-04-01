@@ -25,4 +25,7 @@
   .-aside.-icons-only+.-content {
     width: 100%;
   }
+  .-content .-page {
+    padding: 10px;
+  }
 }

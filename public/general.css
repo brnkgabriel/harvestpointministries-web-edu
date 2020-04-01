@@ -235,7 +235,10 @@ div>.-title {
 
 @media screen and (max-width: 767px) {
   .-tabs .-tab {
-    margin: 5px 0;
-    display: block;
+    margin: 5px 1%;
+    width: 48%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden
   }
 }

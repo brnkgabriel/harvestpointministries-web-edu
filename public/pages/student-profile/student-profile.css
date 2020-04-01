@@ -34,9 +34,50 @@
 
 }
 
+.-tab-contents {
+
+}
+.-tab-contents .-tab-content {
+
+}
+.-tab-contents .-tab-content .-courses {
+  width: 25%;
+}
+.-tab-contents .-tab-content .-courses .-course {
+  width: 50%;
+  max-width: 105px;
+  height: 105px;
+  line-height: 105px;
+  text-align: center;
+  border: 1px solid var(--bg-color);
+  cursor: pointer
+}
+.-tab-contents .-tab-content .-course-history {
+  width: 75%;
+  padding: 15px;
+  height: 420px;
+}
+
 
 @media screen and (max-width: 767px) {
   .-student-profile .-profile {
     width: 100% !important;
+  }
+  
+.-tab-contents .-tab-content .-courses {
+    width: 100%;
+  }
+  .-tab-contents .-tab-content .-courses .-course {
+    width: 25%;
+    max-width: 67px;
+    height: 67px;
+    line-height: 67px;
+  }
+  .-tab-contents .-tab-content .-course-history {
+    width: 100%;
+    padding: 15px;
+  }
+  .-student-profile .-profile {
+    border: unset
   }
 }
