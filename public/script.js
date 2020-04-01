@@ -10,10 +10,6 @@ const AddTeacher      = {
   render: () =>  MinifiedHTML['AddTeacher'],
   run: AddTeacherFn
 }
-const EditTeacher     = {
-  render: () =>  `<h1>Edit Teacher</h1>`,
-  run: EditTeacherFn
-}
 const TeacherProfile  = {
   render: () =>  `<h1>Teacher Profile</h1>`,
   run: TeacherProfileFn
@@ -25,10 +21,6 @@ const AllStudents     = {
 const AddStudent      = {
   render: () =>  MinifiedHTML['AddStudent'],
   run: AddStudentFn
-}
-const EditStudent     = {
-  render: () =>  MinifiedHTML['EditStudent'],
-  run: EditStudentFn
 }
 const StudentProfile  = {
   render: () =>  MinifiedHTML['StudentProfile'],
@@ -42,13 +34,14 @@ const AddCourse       = {
   render: () =>  `<h1>Add Course</h1>`,
   run: AddCourseFn
 }
-const EditCourse      = {
-  render: () =>  `<h1>Edit Course</h1>`,
-  run: EditCourseFn
-}
 const CourseProfile   = {
   render: () =>  `<h1>Course Profile</h1>`,
   run: CourseProfileFn
+}
+
+const ErrorComponent  = {
+  render: () => MinifiedHTML['Page404'],
+  run: Page404Fn
 }
 
 // Routes
@@ -56,16 +49,12 @@ const routes = [
   { path: '/', component: HomeComponent },
   { path: '/all-teachers', component: AllTeachers },
   { path: '/add-teacher', component: AddTeacher },
-  { path: '/edit-teacher', component: EditTeacher },
   { path: '/teacher-profile', component: TeacherProfile },
   { path: '/all-students', component: AllStudents },
   { path: '/add-student', component: AddStudent },
-  { path: '/edit-student', component: EditStudent },
   { path: '/student-profile', component: StudentProfile },
   { path: '/all-course', component: AllCourse },
   { path: '/add-course', component: AddCourse },
-  { path: '/edit-course', component: EditCourse },
-  { path: '/course-profile', component: CourseProfile },
 ]
 
 const parseLocation = () => location.hash.slice(1).toLowerCase() || '/'

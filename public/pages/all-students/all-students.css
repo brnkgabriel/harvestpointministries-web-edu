@@ -5,12 +5,12 @@
 .-all-students .-table {
 
 }
-.-all-students .-table .-row {
+.-all-students .-table .-row:not(.-head) {
   padding: 10px 0;
   cursor: pointer
 }
 
-.-all-students .-table .-row:hover .-col {
+.-all-students .-table .-row:not(.-head):hover .-col {
   text-decoration: underline
 }
 
