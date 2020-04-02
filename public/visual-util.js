@@ -1,3 +1,4 @@
+// This script manipulates elements after they're placed in the DOM
 var Util = function () {
   var tab_contents  = document.querySelectorAll('.-tab-content')
   var tabs          = document.querySelectorAll('.-tab')
