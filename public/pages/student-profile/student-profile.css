@@ -40,6 +40,15 @@
 .-tab-contents .-tab-content {
 
 }
+
+.-tab-contents .-tab-content .-radargraph {
+  width: 60%;
+}
+
+.-tab-contents .-tab-content .-account {
+  width: 40%;
+}
+
 .-tab-contents .-tab-content .-courses {
   width: 40%;
 }
@@ -61,6 +70,14 @@
 
 
 @media screen and (max-width: 767px) {
+  .-tab-contents .-tab-content .-radargraph {
+    width: 100%;
+  }
+  
+  .-tab-contents .-tab-content .-account {
+    width: 100%;
+  }
+
   .-student-profile .-profile {
     width: 100% !important;
   }

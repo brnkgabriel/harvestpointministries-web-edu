@@ -149,8 +149,8 @@
   margin-left: 10px;
   color: var(--gray);
   text-transform: capitalize;
-  font-weight: 400;
-  position: static
+  position: static;
+  letter-spacing: 0.5px;
 }
 
 .-aside.-icons-only .-mid .-mid-item .txt {

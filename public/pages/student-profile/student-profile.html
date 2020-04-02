@@ -12,7 +12,7 @@
 <body>
   <div class="-student-profile -page">
     <div class="-title">student profile</div>
-    <div class="-bio -profile -inlineblock -vatop">
+    <div class="-bio -profile -inlineblock -vatop -bg-white">
       <div class="-initial -three-d">FZ</div>
       <div class="-data">
         <div class="-inlineblock -vatop -name -w50">
@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-    <div class="-details -profile -inlineblock -vatop">
+    <div class="-details -profile -inlineblock -vatop -bg-white">
       <div class="-tabs">
         <div class="-tab -posrel active">
           <span>account information</span>
@@ -56,7 +56,9 @@
       </div>
       <div class="-tab-contents">
         <div class="-tab-content active">
-          <form>
+          <div class="-radargraph -inlineblock -vatop">
+            radargraph
+          </div><form class="-account -inlineblock -vatop">
             <div class="form-group">
               <input type="text" required="required" id="full-name" value="Fly Zend" />
               <label for="input" class="control-label">Full Name</label><i class="bar"></i>
@@ -79,6 +81,14 @@
             <div class="form-group">
               <textarea required="required" id="description">I love coding</textarea>
               <label for="textarea" class="control-label">Description</label><i class="bar"></i>
+            </div>
+            <div class="form-group">
+              <input type="password" required="required" />
+              <label for="input" class="control-label">Password</label><i class="bar"></i>
+            </div>
+            <div class="form-group">
+              <input type="password" required="required" />
+              <label for="input" class="control-label">Confirm Password</label><i class="bar"></i>
             </div>
             <button class="btn" type="submit">update</button>
           </form>
