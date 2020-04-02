@@ -41,10 +41,11 @@
 
 }
 .-tab-contents .-tab-content .-courses {
-  width: 25%;
+  width: 40%;
 }
 .-tab-contents .-tab-content .-courses .-course {
-  width: 50%;
+  width: 46%;
+  margin: 1%;
   max-width: 105px;
   height: 105px;
   line-height: 105px;
@@ -53,7 +54,7 @@
   cursor: pointer
 }
 .-tab-contents .-tab-content .-course-history {
-  width: 75%;
+  width: 60%;
   padding: 15px;
   height: 420px;
 }
@@ -68,7 +69,7 @@
     width: 100%;
   }
   .-tab-contents .-tab-content .-courses .-course {
-    width: 25%;
+    width: 23%;
     max-width: 67px;
     height: 67px;
     line-height: 67px;
