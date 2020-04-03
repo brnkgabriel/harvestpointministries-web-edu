@@ -6,12 +6,12 @@ class FormatPath {
   }
 
   replaceAll(searchValue, replaceValue) {
-    this.path = this.path.replace(new RegExp(searchValue, g), replaceValue)
+    this.path = this.path.replace(new RegExp(searchValue, 'g'), replaceValue)
     return this
   }
 
   capitalize(str) {
-    return str.charAt(0).toUpperCase() + this.slice(1)
+    return str.charAt(0).toUpperCase() + str.slice(1)
   }
 
   camelCase() {

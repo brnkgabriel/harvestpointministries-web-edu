@@ -1,24 +1,24 @@
 
-const parseLocation = () => location.hash.slice(1).toLowerCase() || '/'
+// const parseLocation = () => location.hash.slice(1).toLowerCase() || '/'
 
-const findComponentByPath = (path, routes) => routes.find(r => r.path.match(new RegExp(`^\\${path}$`, 'gm'))) || undefined
+// const findComponentByPath = (path, routes) => routes.find(r => r.path.match(new RegExp(`^\\${path}$`, 'gm'))) || undefined
 
-const router = () => {
-  // Find the component based on the current path
-  const parsedLocation = parseLocation()
-  const splitLocation = parsedLocation.split('?')
-  const path = splitLocation[0]
-  const param = splitLocation[1]
+// const router = () => {
+//   // Find the component based on the current path
+//   const parsedLocation = parseLocation()
+//   const splitLocation = parsedLocation.split('?')
+//   const path = splitLocation[0]
+//   const param = splitLocation[1]
 
-  // If there's no matching route, get the "Error" component
-  const { component = ErrorComponent } = findComponentByPath(path, routes) || {}
+//   // If there's no matching route, get the "Error" component
+//   const { component = ErrorComponent } = findComponentByPath(path, routes) || {}
 
-  // render below to be replaced by run because we're assigning the component function to it
-  document.getElementById('app').innerHTML = component.render(path, param)
-  // component.run(path, param)
-  // Util should always run after component script so dom elements load before Javascript starts
-  Util()
-}
+//   // render below to be replaced by run because we're assigning the component function to it
+//   document.getElementById('app').innerHTML = component.render(path, param)
+//   // component.run(path, param)
+//   // Util should always run after component script so dom elements load before Javascript starts
+//   Util()
+// }
 
 class Router {
   constructor(routes) {
@@ -29,8 +29,8 @@ class Router {
     this.component = null
   }
 
-  parseLocation(location = '/') {
-    this.location = location
+  setLocation(url = '/') {
+    this.location = url
     return this
   }
 
@@ -52,7 +52,7 @@ class Router {
 
   render() {
     this.component.render()
-    return
+    return this
   }
 
   run() {
@@ -61,9 +61,22 @@ class Router {
 }
 
 function initializeRouter() {
-  var parsedLocation = location.hash.slice(1).toLowerCase()
-  new Router()
-    .parseLocation(parsedLocation)
+  var hash = location.hash.slice(1).toLowerCase() || '/'
+  var routes = {
+    '/': Home,
+    '/all-teachers': AllTeachers,
+    '/add-teacher': AddTeacher,
+    '/teacher-profile': TeacherProfile,
+    '/all-students': AllStudents,
+    '/add-student': AddStudent,
+    '/student-profile': StudentProfile,
+    '/all-course': AllCourse,
+    '/add-course': AddCourse,
+    '/course-profile': CourseProfile
+  }
+
+  new Router(routes)
+    .setLocation(hash)
     .setPath()
     .setParameter()
     .setComponent()
@@ -71,5 +84,5 @@ function initializeRouter() {
     .run()
 }
 
-window.addEventListener('hashchange', router)
-window.addEventListener('load', router)
+window.addEventListener('hashchange', initializeRouter)
+window.addEventListener('load', initializeRouter)
