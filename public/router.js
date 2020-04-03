@@ -8,7 +8,7 @@ class Router {
     this.component = null
   }
 
-  setLocation() {
+  setLocation(url = '/') {
     this.location = location.hash.slice(1).toLowerCase() || '/'
     return this
   }
@@ -24,8 +24,8 @@ class Router {
   }
 
   setComponent() {
-    var Component = this.routes[this.path]
-    this.component = new Component(this.path, this.parameter)
+    var Component = this.routes[this.path] || ErrorComponent
+    this.component = new Component(this.parameter)
     return this
   }
 

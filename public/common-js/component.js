@@ -1,17 +1,13 @@
 class Component {
-  constructor(path, parameter) {
+  constructor(parameter) {
     this.users = null
     this.parameter = parameter
 
     this.app = document.getElementById('app')
 
-    this.path = new FormatPath(path)
-      .replaceAll('/', '')
-      .camelCase()
+    // this.db = new Datastore()
 
-    window.addEventListener('firestore', (e) => {
-      this.update(e)
-    })
+    window.addEventListener('firestore', (e) => { this.update(e) })
   }
 
   update() {
@@ -21,7 +17,7 @@ class Component {
   }
 
   render() {
-    this.app.innerHTML = MinifiedHTML[this.path]
+    this.app.innerHTML = MinifiedHTML[this.name]
   }
 
   tabListener() {
@@ -116,7 +112,7 @@ class CourseProfile extends Component {
   }
 }
 
-class Error extends Component {
+class ErrorComponent extends Component {
   constructor(path, parameter) {
     super(path, parameter)
     this.name = 'Error'

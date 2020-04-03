@@ -1,6 +1,6 @@
 // This script manipulates elements before they're placed in the DOM
 
-class FormatPath {
+class SuperString {
   constructor(path) {
     this.path = path
   }

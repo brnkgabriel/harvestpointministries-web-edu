@@ -1,15 +1,25 @@
-// var Database = function () {
-
-//   this.get = function (path, param) {
-//   }
-// }
-
-// var db = new Database()
-
-class Database {
+class Datastore {
   constructor() {
-    this.db = null
+    this.db = this.sections()['db']
+    this.auth = this.sections()['auth']
     this.collection = 'education'
+    console.log('this.db', this.db)
+    console.log('this.auth', this.auth)
+  }
+
+  sections() {
+    var firebaseConfig = {
+      apiKey: "AIzaSyCV2RIdAIZmDADebJnNoUOpWjEUnR_eVlk",
+      authDomain: "harvestpointministries-edu.firebaseapp.com",
+      databaseURL: "https://harvestpointministries-edu.firebaseio.com",
+      projectId: "harvestpointministries-edu",
+      storageBucket: "harvestpointministries-edu.appspot.com",
+      messagingSenderId: "774916786122",
+      appId: "1:774916786122:web:5c547b6b667f8ed1563133",
+      measurementId: "G-SKBELB17L9"
+    }
+    var firebaseApp = firebase.initializeApp(firebaseConfig)
+    return { db: firebaseApp.firestore(), auth: firebaseApp.auth() }
   }
 
   listen() {
