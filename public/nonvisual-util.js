@@ -1,15 +1,22 @@
 // This script manipulates elements before they're placed in the DOM
 
-String.prototype.replaceAll = function (searchValue, replaceValue) {
-  return this.replace(new RegExp(searchValue, 'g'), replaceValue)
-}
+class FormatPath {
+  constructor(path) {
+    this.path = path
+  }
 
-String.prototype.capitalize = function () {
-  return this.charAt(0).toUpperCase() + this.slice(1)
-}
+  replaceAll(searchValue, replaceValue) {
+    this.path = this.path.replace(new RegExp(searchValue, g), replaceValue)
+    return this
+  }
 
-function componentString(path) {
-  return path.split('-').map(str => str.capitalize()).join('')
+  capitalize(str) {
+    return str.charAt(0).toUpperCase() + this.slice(1)
+  }
+
+  camelCase() {
+    return this.path.split('-').map(str => this.capitalize(str)).join('')
+  }
 }
 
 function setAttributes (el, obj) {

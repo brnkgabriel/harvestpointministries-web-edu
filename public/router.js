@@ -21,20 +21,54 @@ const router = () => {
 }
 
 class Router {
-  constructor() {
+  constructor(routes) {
+    this.routes = routes
     this.location = null
+    this.path = null
+    this.parameter = null
+    this.component = null
   }
 
   parseLocation(location = '/') {
     this.location = location
     return this
   }
+
+  setPath() {
+    this.path = this.location.split('?')[0]
+    return this
+  }
+
+  setParameter() {
+    this.param = this.location.split('?')[1]
+    return this
+  }
+
+  setComponent() {
+    var Component = this.routes[this.path]
+    this.component = new Component(this.path, this.param)
+    return this
+  }
+
+  render() {
+    this.component.render()
+    return
+  }
+
+  run() {
+    this.component.run()
+  }
 }
 
 function initializeRouter() {
   var parsedLocation = location.hash.slice(1).toLowerCase()
   new Router()
-  .parseLocation(parsedLocation)
+    .parseLocation(parsedLocation)
+    .setPath()
+    .setParameter()
+    .setComponent()
+    .render()
+    .run()
 }
 
 window.addEventListener('hashchange', router)
