@@ -15,7 +15,8 @@ class FormatPath {
   }
 
   camelCase() {
-    return this.path.split('-').map(str => this.capitalize(str)).join('')
+    var camel = this.path.split('-').map(str => this.capitalize(str)).join('')
+    return camel === '' ? 'Home' : camel
   }
 }
 

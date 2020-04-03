@@ -29,8 +29,8 @@ class Router {
     this.component = null
   }
 
-  setLocation(url = '/') {
-    this.location = url
+  setLocation() {
+    this.location = location.hash.slice(1).toLowerCase() || '/'
     return this
   }
 
@@ -40,13 +40,13 @@ class Router {
   }
 
   setParameter() {
-    this.param = this.location.split('?')[1]
+    this.parameter = this.location.split('?')[1]
     return this
   }
 
   setComponent() {
     var Component = this.routes[this.path]
-    this.component = new Component(this.path, this.param)
+    this.component = new Component(this.path, this.parameter)
     return this
   }
 
@@ -61,7 +61,6 @@ class Router {
 }
 
 function initializeRouter() {
-  var hash = location.hash.slice(1).toLowerCase() || '/'
   var routes = {
     '/': Home,
     '/all-teachers': AllTeachers,
@@ -76,7 +75,7 @@ function initializeRouter() {
   }
 
   new Router(routes)
-    .setLocation(hash)
+    .setLocation()
     .setPath()
     .setParameter()
     .setComponent()
