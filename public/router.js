@@ -20,5 +20,22 @@ const router = () => {
   Util()
 }
 
+class Router {
+  constructor() {
+    this.location = null
+  }
+
+  parseLocation(location = '/') {
+    this.location = location
+    return this
+  }
+}
+
+function initializeRouter() {
+  var parsedLocation = location.hash.slice(1).toLowerCase()
+  new Router()
+  .parseLocation(parsedLocation)
+}
+
 window.addEventListener('hashchange', router)
 window.addEventListener('load', router)
