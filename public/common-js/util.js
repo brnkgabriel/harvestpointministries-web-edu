@@ -72,8 +72,38 @@ class BuildElement {
     return this.element
   }
 
+  appendMany2One(many, one) {
+    many.forEach(each => one.appendChild(each))
+  }
+
 }
 
-function appendMany2One(many, one) {
-  many.forEach(each => one.appendChild(each))
+class Listeners {
+  constructor() {
+
+  }
+
+  tabListener() {
+    var tab_contents  = document.querySelectorAll('.-tab-content')
+    var tabs          = document.querySelectorAll('.-tab')
+    tabs.forEach((tab, idx) => this.tabListen(tab, tab_contents, idx))
+    return this
+  }
+
+  tabListen(tab, tab_contents, idx) {
+    var self = this
+    tab.addEventListener('click', function () {
+      self.removeAddActive(tab_contents, tab_contents[idx])
+      self.removeAddActive(tabs, tab)
+    })
+  }
+
+  removeAddActive(toRemove, toAdd) {
+    toRemove.forEach(each => each.classList.remove('active'))
+    toAdd.classList.add('active')
+  }
+  
+  modalListener() {
+    return this
+  }
 }

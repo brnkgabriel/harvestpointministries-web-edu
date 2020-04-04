@@ -19,7 +19,7 @@
 
 }
 .-student-profile .-bio .-data > div {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .-student-profile .-bio .-data > div .-top {
@@ -29,7 +29,7 @@
 }
 
 .-student-profile .-bio .-data > div .-value {
-
+  font-weight: 400;
 }
 
 .-tab-contents {

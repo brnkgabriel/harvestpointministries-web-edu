@@ -1,5 +1,6 @@
 
 .-add-student {
+  background-color: unset !important;
 }
 
 .-add-student .form-group {
@@ -21,7 +22,6 @@
 
 .-add-student .-students .-student {
   height: 208px;
-  max-width: 296px;
   width: calc(95% / 5);
   margin: calc(5% / 8);
   display: inline-block;
@@ -80,6 +80,16 @@
   .-add-student .-students .-student {
     width: 49%;
   }
+  .-add-student .-students .-student:hover {
+    background-color: rgba(0,0,0,0.05)
+  }
+  .-add-student .-students .-student:nth-child(5n) {
+    margin: calc(5% / 8);
+  }
+  
+  .-add-student .-students .-student:nth-child(5n - 4) {
+    margin: calc(5% / 8);
+  }
   .-add-student .-students .-student:nth-child(2n) {
     margin-right: 0
   }
@@ -92,6 +102,14 @@
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .-add-student .-students .-student {
     width: 49%;
+    margin: calc(5% / 8);
+  }
+  .-add-student .-students .-student:nth-child(5n) {
+    margin: calc(5% / 8);
+  }
+  
+  .-add-student .-students .-student:nth-child(5n - 4) {
+    margin: calc(5% / 8);
   }
   .-add-student .-students .-student:nth-child(2n) {
     margin-right: 0

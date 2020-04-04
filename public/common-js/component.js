@@ -5,8 +5,6 @@ class Component {
 
     this.app = document.getElementById('app')
 
-    // this.db = new Datastore()
-
     window.addEventListener('firestore', (e) => { this.update(e) })
   }
 

@@ -1,4 +1,16 @@
 
+
+var datastore = new Datastore()
+var ui = new firebaseui.auth.AuthUI(datastore.auth);
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    {
+      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      requireDisplayName: false
+    },
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
+  ]
+});
 class Router {
   constructor(routes) {
     this.routes = routes
@@ -52,7 +64,6 @@ function initializeRouter() {
     '/add-course': AddCourse,
     '/course-profile': CourseProfile
   }
-
   new Router(routes)
     .setLocation()
     .setPath()

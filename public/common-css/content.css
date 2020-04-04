@@ -2,7 +2,8 @@
 .-content {
   width: calc(100% - 220px);
   padding: 15px;
-  background-color: var(--bg-color)
+  background-color: var(--bg-color);
+  overflow-y: auto
 }
 
 .-content .-page {
@@ -19,11 +20,14 @@
 @media screen and (max-width: 767px) {
   .-content {
     width: 100%;
+    padding: 5px;
+    overflow-y: unset
   }
   .-aside.-icons-only+.-content {
     width: 100%;
   }
   .-content .-page {
     padding: 10px;
+    background-color: white;
   }
 }

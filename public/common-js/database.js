@@ -1,13 +1,13 @@
 class Datastore {
   constructor() {
-    this.db = this.sections()['db']
-    this.auth = this.sections()['auth']
     this.collection = 'education'
+    this.initialize()
     console.log('this.db', this.db)
     console.log('this.auth', this.auth)
+
   }
 
-  sections() {
+  initialize() {
     var firebaseConfig = {
       apiKey: "AIzaSyCV2RIdAIZmDADebJnNoUOpWjEUnR_eVlk",
       authDomain: "harvestpointministries-edu.firebaseapp.com",
@@ -19,7 +19,8 @@ class Datastore {
       measurementId: "G-SKBELB17L9"
     }
     var firebaseApp = firebase.initializeApp(firebaseConfig)
-    return { db: firebaseApp.firestore(), auth: firebaseApp.auth() }
+    this.db = firebaseApp.firestore()
+    this.auth = firebaseApp.auth()
   }
 
   listen() {

@@ -1,4 +1,5 @@
 
+@import url('./common-css/firebase-ui.css');
 @import url('./common-css/icons.css');
 @import url('./common-css/general.css');
 @import url('./common-css/form-fields.css');
@@ -16,7 +17,21 @@
 }
 
 .-container .-signup {
+  height: 100%;
+  background-color: #0288D1;
+  background: radial-gradient(circle, #039BE5, #01579b);
+  position: relative
+}
 
+.-container .-signup>div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+
+.firebaseui-page-provider-sign-in {
+  background: transparent
 }
 
 .-container .-pages {
