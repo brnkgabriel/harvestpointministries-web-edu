@@ -2,15 +2,40 @@
 
 var datastore = new Datastore()
 var ui = new firebaseui.auth.AuthUI(datastore.auth);
-ui.start('#firebaseui-auth-container', {
+var uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      // User successfully signed in.
+      // Return type determines whether we continue the redirect automatically
+      // or whether we leave that to developer to handle.
+      return true;
+    },
+  },
+  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+  // signInFlow: 'popup',
+  signInSuccessUrl: '#/',
   signInOptions: [
     {
       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
       requireDisplayName: false
     },
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
-  ]
-});
+    // firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
+  ],
+  // // Terms of service url.
+  // tosUrl: '<your-tos-url>',
+  // // Privacy policy url.
+  // privacyPolicyUrl: '<your-privacy-policy-url>'
+};
+ui.start('#firebaseui-auth-container', uiConfig);
+// ui.start('#firebaseui-auth-container', {
+//   signInOptions: [
+//     {
+//       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+//       requireDisplayName: false
+//     },
+//             firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
+//   ]
+// });
 class Router {
   constructor(routes) {
     this.routes = routes

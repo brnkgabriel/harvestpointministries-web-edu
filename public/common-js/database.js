@@ -2,8 +2,6 @@ class Datastore {
   constructor() {
     this.collection = 'education'
     this.initialize()
-    console.log('this.db', this.db)
-    console.log('this.auth', this.auth)
 
   }
 

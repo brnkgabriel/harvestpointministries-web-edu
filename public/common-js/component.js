@@ -1,9 +1,12 @@
 class Component {
   constructor(parameter) {
-    this.users = null
-    this.parameter = parameter
-
-    this.app = document.getElementById('app')
+    this.users      = null
+    this.parameter  = parameter
+    this.app        = document.getElementById('app')
+    this.authEl     = document.getElementById('firebaseui-auth-container')
+    this.modal      = document.getElementById('modal')
+    this.pages      = document.getElementById('pages')
+    this.user       = this.getUser()
 
     window.addEventListener('firestore', (e) => { this.update(e) })
   }
@@ -11,11 +14,22 @@ class Component {
   update() {
     if (e.msg === 'success') this.users = e.detail
     else {}
-    // update visual with this.users
+  }
+
+  getUser() {
+    var user = JSON.parse(localStorage.getItem('firebaseui::rememberedAccounts'))
+    return user ? user[0] : null
   }
 
   render() {
-    this.app.innerHTML = MinifiedHTML[this.name]
+    if (this.user) {
+      [this.modal, this.pages].map(el => el.classList.remove('-hide'))
+      this.authEl.classList.add('-hide')
+      this.app.innerHTML = MinifiedHTML[this.name]
+    } else {
+      [this.modal, this.pages].map(el => el.classList.add('-hide'))
+      this.authEl.classList.remove('-hide')
+    }
   }
 
   tabListener() {

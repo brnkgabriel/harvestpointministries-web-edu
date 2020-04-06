@@ -3,10 +3,9 @@
 
 }
 .-all-students .-table {
-
+  width: 60%;
 }
 .-all-students .-table .-row:not(.-head) {
-  padding: 10px 0;
   cursor: pointer
 }
 
@@ -49,4 +48,8 @@
 .-all-students .-table .-row.-head  .-col {
   text-transform: capitalize;
   font-weight: 600;
+}
+
+.-all-students .-graph {
+  width: 40%;
 }

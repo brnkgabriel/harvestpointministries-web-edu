@@ -25,19 +25,23 @@ class SuperString {
 //   sku: ['div', { class: '-sku' }, { style: 'background-color:yellow;' }, 'this is a div']
 // }
 
-// var sku = new BuildElement(prop['sku'])
-//   .create()
-//   .setAttributes()
-//   .setStyle()
-//   .setHTML()
-//   .getElement()
-class BuildElement {
+// var sku = new Tag(prop['sku']).get()
+
+class Tag {
   constructor(properties) {
     this.tag = properties[0]
     this.attributes = properties[1]
     this.styles = properties[2]
     this.textContent = properties[3]
     this.element = null
+  }
+
+  get() {
+    return this.create()
+      .setAttributes()
+      .setStyle()
+      .setHTML()
+      .getElement()
   }
 
   create() {
@@ -72,7 +76,7 @@ class BuildElement {
     return this.element
   }
 
-  appendMany2One(many, one) {
+  static appendMany2One(many, one) {
     many.forEach(each => one.appendChild(each))
   }
 
@@ -84,8 +88,8 @@ class Listeners {
   }
 
   tabListener() {
-    var tab_contents  = document.querySelectorAll('.-tab-content')
-    var tabs          = document.querySelectorAll('.-tab')
+    var tab_contents = document.querySelectorAll('.-tab-content')
+    var tabs = document.querySelectorAll('.-tab')
     tabs.forEach((tab, idx) => this.tabListen(tab, tab_contents, idx))
     return this
   }
@@ -102,7 +106,7 @@ class Listeners {
     toRemove.forEach(each => each.classList.remove('active'))
     toAdd.classList.add('active')
   }
-  
+
   modalListener() {
     return this
   }
