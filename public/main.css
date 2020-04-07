@@ -1,11 +1,12 @@
 
-@import url('./common-css/firebase-ui.css');
+/* @import url('./common-css/firebase-ui.css'); */
 @import url('./common-css/icons.css');
 @import url('./common-css/general.css');
 @import url('./common-css/form-fields.css');
 @import url('./common-css/header.css');
 @import url('./common-css/aside.css');
 @import url('./common-css/content.css');
+@import url('./pages/auth/auth.css');
 @import url('./pages/add-teacher/add-teacher.css');
 @import url('./pages/add-student/add-student.css');
 @import url('./pages/student-profile/student-profile.css');

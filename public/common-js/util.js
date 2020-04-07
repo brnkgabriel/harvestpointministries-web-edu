@@ -1,5 +1,16 @@
 // This script manipulates elements before they're placed in the DOM
 
+class User {
+  constructor() {
+    this.email = this.getUser()
+  }
+
+  getUser() {
+    var user = localStorage.getItem('firebaseui::rememberedAccounts')
+    return user ? user : null
+  }
+}
+
 class SuperString {
   constructor(path) {
     this.path = path
@@ -83,9 +94,7 @@ class Tag {
 }
 
 class Listeners {
-  constructor() {
-
-  }
+  constructor() {}
 
   tabListener() {
     var tab_contents = document.querySelectorAll('.-tab-content')

@@ -1,48 +1,12 @@
 
-
-var datastore = new Datastore()
-var ui = new firebaseui.auth.AuthUI(datastore.auth);
-var uiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-      return true;
-    },
-  },
-  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-  // signInFlow: 'popup',
-  signInSuccessUrl: '#/',
-  signInOptions: [
-    {
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      requireDisplayName: false
-    },
-    // firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
-  ],
-  // // Terms of service url.
-  // tosUrl: '<your-tos-url>',
-  // // Privacy policy url.
-  // privacyPolicyUrl: '<your-privacy-policy-url>'
-};
-ui.start('#firebaseui-auth-container', uiConfig);
-// ui.start('#firebaseui-auth-container', {
-//   signInOptions: [
-//     {
-//       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-//       requireDisplayName: false
-//     },
-//             firebase.auth.GoogleAuthProvider.PROVIDER_ID, 
-//   ]
-// });
 class Router {
   constructor(routes) {
-    this.routes = routes
-    this.location = null
-    this.path = null
-    this.parameter = null
-    this.component = null
+    this.routes     = routes
+    this.location   = null
+    this.path       = null
+    this.parameter  = null
+    this.component  = null
+    this.user       = new User()
   }
 
   setLocation(url = '/') {
@@ -61,8 +25,13 @@ class Router {
   }
 
   setComponent() {
+    var parentEl = 'appEl'
+    if (!this.user.email) {
+      this.path = '/auth'
+      parentEl = 'authEl'
+    }
     var Component = this.routes[this.path] || ErrorComponent
-    this.component = new Component(this.parameter)
+    this.component = new Component(this.parameter, parentEl)
     return this
   }
 
@@ -71,9 +40,7 @@ class Router {
     return this
   }
 
-  run() {
-    this.component.run()
-  }
+  run() { this.component.run() }
 }
 
 function initializeRouter() {
@@ -87,7 +54,8 @@ function initializeRouter() {
     '/student-profile': StudentProfile,
     '/all-course': AllCourse,
     '/add-course': AddCourse,
-    '/course-profile': CourseProfile
+    '/course-profile': CourseProfile,
+    '/auth': Auth
   }
   new Router(routes)
     .setLocation()

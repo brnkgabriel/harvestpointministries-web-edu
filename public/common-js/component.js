@@ -1,12 +1,14 @@
 class Component {
-  constructor(parameter) {
+  constructor(parameter, parentEl) {
     this.users      = null
     this.parameter  = parameter
-    this.app        = document.getElementById('app')
-    this.authEl     = document.getElementById('firebaseui-auth-container')
+    this.appEl      = document.getElementById('app')
+    this.authEl     = document.getElementById('auth')
     this.modal      = document.getElementById('modal')
     this.pages      = document.getElementById('pages')
-    this.user       = this.getUser()
+    this.user       = new User()
+    this.datastore  = new Datastore()
+    this.parentEl   = parentEl
 
     window.addEventListener('firestore', (e) => { this.update(e) })
   }
@@ -16,20 +18,17 @@ class Component {
     else {}
   }
 
-  getUser() {
-    var user = JSON.parse(localStorage.getItem('firebaseui::rememberedAccounts'))
-    return user ? user[0] : null
-  }
-
   render() {
-    if (this.user) {
+    // this.appEl.innerHTML = MinifiedHTML[this.name]
+    if (this.user.email) {
       [this.modal, this.pages].map(el => el.classList.remove('-hide'))
       this.authEl.classList.add('-hide')
-      this.app.innerHTML = MinifiedHTML[this.name]
     } else {
       [this.modal, this.pages].map(el => el.classList.add('-hide'))
       this.authEl.classList.remove('-hide')
     }
+    this[this.parentEl].innerHTML = MinifiedHTML[this.name]
+    console.log('page name is', this.name)
   }
 
   tabListener() {
@@ -51,6 +50,48 @@ class Component {
 
   run() {
     this.tabListener()
+  }
+}
+
+class Auth extends Component {
+  // todo: create validateEmail function and put the appropriate error element in the form
+  constructor(path, parameter) {
+    super(path, parameter)
+    this.name = 'Auth'
+  }
+
+  run() {
+    super.run()
+    this.loginListener()
+  }
+
+  loginListener() {
+    // the login, password and submit elements are initialized here
+    // because the run function executes after the they've been rendered
+    // if they were put in the constructor they wouldn't have been rendered and so
+    // will be null
+    this.login    = document.getElementById('login')
+    this.password = document.getElementById('password')
+    this.submit   = document.getElementById('submit')
+    var self = this
+    // this.submit.addEventListener('click', function () {
+    //   var username = self.login.value
+    //   var password = self.password.value
+    // })
+    this.submit.addEventListener('click', () => this.signIn(self.login.value, self.password.value))
+  }
+
+  signIn(email, password) {
+    this.datastore.auth.signInWithEmailAndPassword(email, password)
+    .then(function (result) {
+      localStorage.setItem('firebaseui::rememberedAccounts', result['user']['email'])
+      location.reload()
+    }).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log('errorCode', errorCode, 'errorMessage', errorMessage)
+    });
   }
 }
 
