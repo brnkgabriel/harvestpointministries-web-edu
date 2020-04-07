@@ -1,14 +1,14 @@
 class Component {
-  constructor(parameter, parentEl) {
+  constructor(json) {
     this.users      = null
-    this.parameter  = parameter
+    this.parameter  = json['parameter']
     this.appEl      = document.getElementById('app')
     this.authEl     = document.getElementById('auth')
     this.modal      = document.getElementById('modal')
     this.pages      = document.getElementById('pages')
     this.user       = new User()
-    this.datastore  = new Datastore()
-    this.parentEl   = parentEl
+    this.datastore  = json['datastore']
+    this.parentEl   = json['parentEl']
 
     window.addEventListener('firestore', (e) => { this.update(e) })
   }

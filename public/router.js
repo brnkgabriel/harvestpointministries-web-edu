@@ -1,4 +1,5 @@
 
+var datastore  = new Datastore()
 class Router {
   constructor(routes) {
     this.routes     = routes
@@ -24,14 +25,19 @@ class Router {
     return this
   }
 
-  setComponent() {
+  setComponent(datastore) {
     var parentEl = 'appEl'
     if (!this.user.email) {
       this.path = '/auth'
       parentEl = 'authEl'
     }
     var Component = this.routes[this.path] || ErrorComponent
-    this.component = new Component(this.parameter, parentEl)
+    var params = {
+      parameter: this.parameter,
+      parentEl,
+      datastore
+    }
+    this.component = new Component(params)
     return this
   }
 
@@ -61,7 +67,7 @@ function initializeRouter() {
     .setLocation()
     .setPath()
     .setParameter()
-    .setComponent()
+    .setComponent(datastore)
     .render()
     .run()
 }
