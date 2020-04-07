@@ -1,11 +1,25 @@
 
 /* @import url('./common-css/firebase-ui.css'); */
+@import url('./common-css/material-design/general.css');
+@import url('./common-css/material-design/button-contained.css');
+@import url('./common-css/material-design/button-outlined.css');
+@import url('./common-css/material-design/button-text.css');
+@import url('./common-css/material-design/checkbox.css');
+@import url('./common-css/material-design/circular-progress.css');
+@import url('./common-css/material-design/linear-progress.css');
+@import url('./common-css/material-design/radio-buttons.css');
+@import url('./common-css/material-design/slider.css');
+@import url('./common-css/material-design/switch.css');
+@import url('./common-css/material-design/textfield-filled.css');
+@import url('./common-css/material-design/textfield-outlined.css');
+@import url('./common-css/material-design/textfield-standard.css');
+
 @import url('./common-css/icons.css');
 @import url('./common-css/general.css');
-@import url('./common-css/form-fields.css');
 @import url('./common-css/header.css');
 @import url('./common-css/aside.css');
 @import url('./common-css/content.css');
+
 @import url('./pages/auth/auth.css');
 @import url('./pages/add-teacher/add-teacher.css');
 @import url('./pages/add-student/add-student.css');
@@ -14,7 +28,9 @@
 
 .-container {
   width: 100%;
-  overflow-x: hidden
+  max-width: 1170px;
+  overflow-x: hidden;
+  margin: 0 auto;
 }
 
 .-container .-signup {

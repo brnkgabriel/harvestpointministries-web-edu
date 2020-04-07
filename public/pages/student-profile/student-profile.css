@@ -1,16 +1,18 @@
 
-.-student-profile {
-
+.-student-profile.-page {
+  height: 543px;
 }
 .-student-profile .-profile {
   border: 16px solid white;
 }
 .-student-profile .-profile.-bio {
-  width: 25%;
+  width: 35%;
+  height: 100%;
 }
 
 .-student-profile .-profile.-details {
-  width: 75%;
+  width: 65%;
+  height: 100%;
 }
 .-student-profile .-bio img {
   width: 100%;
@@ -18,14 +20,29 @@
 .-student-profile .-bio .-data {
 
 }
-.-student-profile .-bio .-data > div {
-  margin: 5px 0;
+
+.-student-profile .-bio .-radargraph {
+  width: 100%;
+  max-width: 280px;
+  height: 280px;
+  margin: auto;
 }
 
-.-student-profile .-bio .-data > div .-top {
+.-student-profile .-bio .-data > div {
+  margin: 1px 0;
+}
+
+.-student-profile .-bio .-data > div .-caption,
+.-student-profile .-bio .-data > div .-value {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.-student-profile .-bio .-data > div .-caption {
   text-transform: capitalize;
   font-weight: 600;
   font-size: 1.2em;
+  width: 35%;
 }
 
 .-student-profile .-bio .-data > div .-value {
@@ -39,12 +56,36 @@
 
 }
 
-.-tab-contents .-tab-content .-radargraph {
-  width: 60%;
+.-tab-contents .-tab-content .-account {
+  width: 100%;
 }
 
-.-tab-contents .-tab-content .-account {
-  width: 40%;
+.-account .textfields {
+
+}
+.-account .textfields > * {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+  margin: unset;
+  border: 2px solid white;
+}
+
+.-account .textfields > *:nth-child(odd) {
+  margin-left: 0;
+}
+
+.-account .textfields > *:nth-child(even) {
+  margin-right: 0;
+}
+.-account .textfields label textarea {
+  height: 150px;
+}
+.-account .textfields input {
+
+}
+.-account .textfields span {
+
 }
 
 .-tab-contents .-tab-content .-courses {
@@ -66,8 +107,18 @@
   height: 420px;
 }
 
+@media screen and (max-width: 480px) {
+  .-student-profile .-profile.-bio,
+  .-student-profile .-profile.-details {
+    width: 100%;
+  }
 
-@media screen and (max-width: 767px) {
+  .-account .textfields > * {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
   .-tab-contents .-tab-content .-radargraph {
     width: 100%;
   }

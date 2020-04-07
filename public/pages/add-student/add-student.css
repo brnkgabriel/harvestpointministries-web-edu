@@ -22,7 +22,7 @@
 
 .-add-student .-students .-student {
   height: 208px;
-  width: calc(95% / 5);
+  width: calc(95% / 4);
   margin: calc(5% / 8);
   display: inline-block;
   vertical-align: top;

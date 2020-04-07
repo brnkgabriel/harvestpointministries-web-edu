@@ -104,7 +104,7 @@ a {
 }
 
 .-w100 {
-  width: 100%
+  width: 100% !important;
 }
 
 .-w90 {
@@ -243,19 +243,6 @@ div>.-title {
 
 .-tab-contents .-tab-content.active {
   display: block;
-}
-
-.-three-d {
-  text-align: center;
-  color: var(--user-light);
-  font-family: 'Verdana';
-  font-size: 8em;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-shadow: 1px 1px var(--user-dark), 2px 2px var(--user-dark), 2px 2px 3px rgba(0,0,0,0.5);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow-x: hidden;
 }
 
 .-card {
