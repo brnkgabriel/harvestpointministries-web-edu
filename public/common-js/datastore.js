@@ -35,6 +35,12 @@ class Datastore {
       })
   }
 
+  expand(msg) {
+    var keyVals = msg.split('|'), expanded = {}
+    keyVals.forEach(keyVal =>  expanded[keyVal.split('=')[0]] = keyVal.split('=')[1])
+    return expanded
+  }
+
   send() {
     var dbData = {}
     dbData[this.form.email.value] = this.compress()

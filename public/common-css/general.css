@@ -36,6 +36,7 @@
   --user-dark: #f90;
   --user-light: #fff3d9;
   --bg-white: white;
+  --font: 'Comic Neue', Roboto
 }
 
 html {
@@ -47,7 +48,7 @@ html {
 }
 
 body {
-  font-family: 'Comic Neue', Roboto;
+  font-family: var(--font);
   font-size: 14px;
   line-height: 1.42857143;
   color: #222;
@@ -184,7 +185,7 @@ div>.-title {
 
 .-tabs .-tab {
   padding: 5px 0px;
-  margin: 0 8px;
+  margin: 0 5px;
   text-align: left;
   width: fit-content;
   cursor: pointer;

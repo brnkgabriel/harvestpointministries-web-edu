@@ -111,9 +111,21 @@
   .-student-profile .-profile.-bio,
   .-student-profile .-profile.-details {
     width: 100%;
+    border: unset
+  }
+
+  .-tab-contents .-tab-content .-courses .-course {
+    width: 23%;
   }
 
   .-account .textfields > * {
+    width: 100%;
+  }
+
+  .-student-profile.-page {
+    height: unset
+  }
+  .-tab-contents .-tab-content .-courses {
     width: 100%;
   }
 }
@@ -146,5 +158,17 @@
   }
   .-student-profile .-profile {
     border: unset
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1170px) {
+  
+
+  .-student-profile .-bio .-data > div .-caption {
+    width: 50%;
+  }
+
+  .-student-profile .-bio .-data > div .-value {
+    width: 50%;
   }
 }

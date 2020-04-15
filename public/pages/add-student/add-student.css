@@ -31,11 +31,11 @@
   padding: 20px;
 }
 
-.-add-student .-students .-student:nth-child(5n) {
+.-add-student .-students .-student:nth-child(4n) {
   margin-right: 0
 }
 
-.-add-student .-students .-student:nth-child(5n - 4) {
+.-add-student .-students .-student:nth-child(4n - 3) {
   margin-left: 0;
 }
 .-add-student .-students .-student:hover {
@@ -104,11 +104,11 @@
     width: 49%;
     margin: calc(5% / 8);
   }
-  .-add-student .-students .-student:nth-child(5n) {
+  .-add-student .-students .-student:nth-child(4n) {
     margin: calc(5% / 8);
   }
   
-  .-add-student .-students .-student:nth-child(5n - 4) {
+  .-add-student .-students .-student:nth-child(4n - 3) {
     margin: calc(5% / 8);
   }
   .-add-student .-students .-student:nth-child(2n) {

@@ -29,5 +29,6 @@
   .-content .-page {
     padding: 10px;
     background-color: white;
+    padding-bottom: 50px
   }
 }

@@ -1,4 +1,64 @@
 
+@import url('https://fonts.googleapis.com/css?family=Comic+Neue:300,300i,400,400i,700,700i&display=swap');
+
+:root {
+  --pure-material-primary-rgb: 124, 153, 0;
+  --pure-material-onprimary-rgb: 255, 255, 255;
+  --pure-material-surface-rgb: 255, 255, 255;
+  --pure-material-onsurface-rgb: 0, 0, 0;
+  --font: 'Comic Neue'
+}
+
+.checkboxes > label,
+.radios > label {
+  display: block;
+  margin: 16px 0;
+}
+
+.switches > label {
+  width: 120px;
+}
+
+.switches > label:first-child {
+  margin: 0 0 16px;
+}
+
+.textfields > label {
+  margin: 16px 0
+}
+
+.checkboxes > label:first-child,
+.radios > label:first-child,
+.textfields > label:first-child {
+  margin: 0 0 16px;
+}
+
+.checkboxes > label:last-child,
+.radios > label:last-child,
+.textfields > label:last-child {
+  margin: 0 0 16px;
+}
+
+.progresses > progress:first-child {
+  margin: 0 0 16px;
+}
+
+.progresses > progress:last-child {
+  margin: 16px 0 0;
+}
+
+
+a {
+  font-size: 18px;
+  color: rgb(var(--pure-material-primary-rgb));
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline
+}
+
+
 /* CIRCULAR PROGRESS */
 .pure-material-progress-circular {
   -webkit-appearance: none;

@@ -1,18 +1,6 @@
 
 /* @import url('./common-css/firebase-ui.css'); */
-@import url('./common-css/material-design/general.css');
-@import url('./common-css/material-design/button-contained.css');
-@import url('./common-css/material-design/button-outlined.css');
-@import url('./common-css/material-design/button-text.css');
-@import url('./common-css/material-design/checkbox.css');
-@import url('./common-css/material-design/circular-progress.css');
-@import url('./common-css/material-design/linear-progress.css');
-@import url('./common-css/material-design/radio-buttons.css');
-@import url('./common-css/material-design/slider.css');
-@import url('./common-css/material-design/switch.css');
-@import url('./common-css/material-design/textfield-filled.css');
-@import url('./common-css/material-design/textfield-outlined.css');
-@import url('./common-css/material-design/textfield-standard.css');
+@import url('./common-css/m-general.css');
 
 @import url('./common-css/icons.css');
 @import url('./common-css/general.css');
@@ -43,7 +31,7 @@
 .-container .-signup>div {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 46.3%;
   transform: translate(-50%,-50%)
 }
 
