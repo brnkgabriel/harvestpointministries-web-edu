@@ -1,0 +1,99 @@
+var AddStudent = {
+  render: function () {
+    return `
+    <div class="-add-student -page">
+    <div class="-title">recent students</div>
+    <div class="-students">
+      <div class="-student -new -posrel -card">
+        <span class="-txt -posabs">add Student</span>
+      </div><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a><a href="#/student-profile?st=Wumight" class="-student -other -card">
+        <div class="-name -code">Wumight</div>
+        <div class="-name -full">Ebunoluwa Ajiboye</div>
+      </a>
+    </div>
+    <form class="-registration">
+      <div class="form-group -inlineblock -vatop">
+        <input type="text" required="required" id="full-name" />
+        <label for="input" class="control-label">Full Name</label><i class="bar"></i>
+      </div><div class="form-group -inlineblock -vatop">
+        <input type="number" required="required" id="email" />
+        <label for="input" class="control-label">Email</label><i class="bar"></i>
+      </div><div class="form-group -inlineblock -vatop">
+        <input type="number" required="required" id="codename" />
+        <label for="input" class="control-label">Codename (alias)</label><i class="bar"></i>
+      </div><div class="form-group -inlineblock -vatop">
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <label for="select" class="control-label">Gender</label><i class="bar"></i>
+      </div><div class="form-group -inlineblock -vatop">
+        <textarea required="required" id="description"></textarea>
+        <label for="textarea" class="control-label">Description</label><i class="bar"></i>
+      </div><div class="form-group -inlineblock -vatop">
+        <input type="password" required="required" />
+        <label for="input" class="control-label">Password</label><i class="bar"></i>
+      </div><div class="form-group -inlineblock -vatop">
+        <input type="password" required="required" />
+        <label for="input" class="control-label">Confirm Password</label><i class="bar"></i>
+      </div>
+      <button class="btn" type="submit">submit</button>
+    </form>
+  </div>
+    `
+  }
+}
