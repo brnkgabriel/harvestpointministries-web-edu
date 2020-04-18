@@ -31,8 +31,6 @@ var styleArray = [
   `
 ]
 
-styles.innerHTML = styleArray[0]
-
 
 // var json = {
 //   vertices: [0.5, 0.45, 0.8, 0.363, 0.44, 0.33, 0.4, 0.35],
@@ -249,12 +247,20 @@ class RGraph extends HTMLElement {
     super()
 
     this.attachShadow({ mode: 'open' })
-    this.shadowRoot.appendChild(styles.content)
-    this.appendParent()
+    this.render()
+    // we append child to this.shadowRoot here
+  }
 
+  render() {
+    TagNS.appendMany2One([this.styles(), this.html()], this.shadowRoot)
     this.el = this.shadowRoot.querySelector('.-chart')
     new Radar(this.json(this.el))
-    // we append child to this.shadowRoot here
+  }
+
+  styles() {
+    var styles = document.createElement('template')
+    styles.innerHTML = styleArray[0]
+    return styles.content
   }
 
   json(el) {
@@ -262,6 +268,7 @@ class RGraph extends HTMLElement {
       vertices: this.vertices,
       percents: [1, 0.8, 0.6, 0.4, 0.2, 0],
       colors: ['#94c277', '#bee894', '#f3f2a2', '#f1c354', '#f07377', '#000'],
+      // colors: ['#00FF00', '#7FFF00', '#FFFF00', '#FFFF00', '#FF0000', '#000'],
       size: this.vertices.length,
       width: 320,
       height: 320,
@@ -270,11 +277,10 @@ class RGraph extends HTMLElement {
     }
   }
 
-  appendParent() {
+  html() {
     var radarEl = document.createElement('div')
     radarEl.className = '-chart'
-    this.shadowRoot.appendChild(radarEl)
-    // console.log('from build, list is', this.list instanceof Array)
+    return radarEl
   }
 
   static get observedAttributes() {

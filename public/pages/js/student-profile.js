@@ -13,32 +13,25 @@ var StudentProfileComponent = {
       </div>
       <div class="-data">
         <div class="-name">
-          <div class="-caption">name</div>
-          <div class="-value">Fly Zend</div>
+          <div class="-caption">name</div><div class="-value">Fly Zend</div>
         </div>
         <div class="-codename">
-          <div class="-caption">codename</div>
-          <div class="-value">fz</div>
+          <div class="-caption">codename</div><div class="-value">fz</div>
         </div>
         <div class="-email">
-          <div class="-caption">email</div>
-          <div class="-value">fly@gmail.com</div>
+          <div class="-caption">email</div><div class="-value">fly@gmail.com</div>
         </div>
         <div class="-gender">
-          <div class="-caption">gender</div>
-          <div class="-value">female</div>
+          <div class="-caption">gender</div><div class="-value">female</div>
         </div>
         <div class="-earned">
-          <div class="-caption">earned</div>
-          <div class="-value">$300</div>
+          <div class="-caption">earned</div><div class="-value">$300</div>
         </div>
         <div class="-points">
-          <div class="-caption">points</div>
-          <div class="-value">3,240</div>
+          <div class="-caption">points</div><div class="-value">3,240</div>
         </div>
         <div class="-description">
-          <div class="-caption">description</div>
-          <div class="-value">I love coding</div>
+          <div class="-caption">description</div><div class="-value">I love coding</div>
         </div>
       </div>
     </div><div class="-details -profile -inlineblock -vatop -bg-white">
@@ -73,8 +66,7 @@ var StudentProfileComponent = {
             </div><div class="-course -card -inlineblock -vatop">
               course 8
             </div>
-          </div>
-          <div class="-course-history -inlineblock -vatop">
+          </div><div class="-course-history -inlineblock -vatop">
             course history
           </div>
         </div>

@@ -1,4 +1,13 @@
 
+
+r-graph {
+  display: inline-block;
+  vertical-align: middle;
+  width: 320px;
+  height: 320px;
+}
+
+
 .-content {
   width: calc(100% - 220px);
   padding: 15px;
@@ -10,12 +19,12 @@
   padding: 15px;
   border-radius: 0.25rem;
   height: 100%;
+  background-color: white;
 }
 
 .-aside.-icons-only+.-content {
   width: calc(100% - 60px)
 }
-
 
 @media screen and (max-width: 767px) {
   .-content {
