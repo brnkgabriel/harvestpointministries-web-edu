@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-
-<body>
-
-  <div class="-auth form-1">
+var AuthComponent = {
+  render: function () {
+    return `
+    <div class="-auth form-1">
     <p class="field">
       <input type="text" name="login" placeholder="username or email" id="login" />
       <icon>👨</icon>
@@ -24,6 +14,6 @@
       <button id="submit" type="submit" name="submit"></button>
     </p>
   </div>
-</body>
-
-</html>
+    `
+  }
+}
