@@ -2,8 +2,12 @@
 .-all-students {
 
 }
+.-all-students .-table-graph {
+  text-align: center
+}
 .-all-students .-table {
-  width: 60%;
+  width: calc(100% - 320px);
+  text-align: left;
 }
 .-all-students .-table .-row:not(.-head) {
   cursor: pointer
@@ -51,5 +55,30 @@
 }
 
 .-all-students .-graph {
-  width: 40%;
+  width: 320px;
+}
+
+.-graph .-courses {
+
+}
+.-graph .-courses .-course {
+  width: 50%;
+  margin: 4px 0;
+}
+.-graph .-courses .-course .-course-info {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.-graph .-courses .-course .-course-info .-name {
+
+}
+
+@media screen and (max-width: 767px) {
+  .-all-students .-graph {
+    
+  }
+
+  .-all-students .-table {
+    width: 100%;
+  }
 }

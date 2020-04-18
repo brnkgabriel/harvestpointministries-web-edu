@@ -129,6 +129,17 @@ class AllStudents extends Component {
     super(path, parameter)
     this.name = 'AllStudents'
   }
+
+  run() {
+    var allStudents = document.querySelectorAll('.-table .-row:not(.-head)')
+    var rGraph = document.querySelector('r-graph')
+    allStudents.forEach(student => {
+      student.addEventListener('click', function () {
+        var aggregate = student.getAttribute('data-agg')
+        rGraph.setAttribute('vertices', aggregate)
+      })
+    })
+  }
 }
 
 class AddStudent extends Component {
