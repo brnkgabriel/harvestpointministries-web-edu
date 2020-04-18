@@ -40,11 +40,12 @@ class SuperString {
 
 class Tag {
   constructor(properties) {
-    this.tag = properties[0]
-    this.attributes = properties[1]
-    this.styles = properties[2]
-    this.textContent = properties[3]
-    this.element = null
+    this.URI          = "http://www.w3.org/2000/svg"
+    this.tag          = properties[0]
+    this.attributes   = properties[1]
+    this.styles       = properties[2]
+    this.textContent  = properties[3]
+    this.element      = null
   }
 
   get() {
@@ -91,6 +92,17 @@ class Tag {
     many.forEach(each => one.appendChild(each))
   }
 
+}
+
+class TagNS extends Tag{
+  constructor(properties) {
+    super(properties)
+  }
+  
+  create() {
+    this.element = document.createElementNS(this.URI, this.tag)
+    return this
+  }
 }
 
 class Listeners {

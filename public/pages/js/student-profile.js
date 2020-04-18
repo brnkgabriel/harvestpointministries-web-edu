@@ -1,11 +1,15 @@
-var StudentProfile = {
+var StudentProfileComponent = {
   render: function () {
     return `
     <div class="-student-profile -page">
     <div class="-title">student profile</div>
     <div class="-bio -profile -inlineblock -vatop -bg-white">
       <div class="-radargraph">
-        radargraph
+        <r-graph 
+        value='0'
+        vertices='[0.4, 0.45, 0.8, 0.663, 0.44, 0.53, 0.45, 0.85]'
+        categories='["bible", "maths", "software design", "chemistry", "music", "physics", "biology", "hardware design" ]'
+        ></r-graph>
       </div>
       <div class="-data">
         <div class="-name">
@@ -37,8 +41,7 @@ var StudentProfile = {
           <div class="-value">I love coding</div>
         </div>
       </div>
-    </div>
-    <div class="-details -profile -inlineblock -vatop -bg-white">
+    </div><div class="-details -profile -inlineblock -vatop -bg-white">
       <div class="-tabs">
         <div class="-tab -posrel active">
           <span>account information</span>

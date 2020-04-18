@@ -1,58 +1,39 @@
-class Tag {
-  constructor(properties) {
-    this.URI          = "http://www.w3.org/2000/svg"
-    this.tag          = properties[0]
-    this.attributes   = properties[1]
-    this.styles       = properties[2]
-    this.textContent  = properties[3]
-    this.element      = null
-  }
+// R-Graph Notes
+// - the attributes must be in single quotes
+//   so that the list attribute can accomodate JSON in double quotes
+//   example: <m-select value='0' list='[{"x": "twenty"}]'></m-select>
+// - must set the global --font css variable so the select list takes
+//   the font of the parent
 
-  get() {
-    return this.create()
-      .setAttributes()
-      .setStyle()
-      .setHTML()
-      .getElement()
-  }
+var styles = document.createElement('template')
 
-  create() {
-    this.element = document.createElementNS(this.URI, this.tag)
-    return this
-  }
+var styleArray = [
+  `
+    <style>
+    .-chart {
+      width: 320px;
+      height: 320px;
+      display: inline-block;
+      font-family: var(--font);
+      font-weight: bold;
+    }
+    
+    .-chart svg g {
+      transform: translate(50%,50%) scale(0.4)
+    }
+    
+    .-chart svg g text {
+      font-size: 2em;
+      text-transform: uppercase;
+      dominant-baseline: central
+    }
+    </style>
+  `
+]
 
-  assignAttribute(object) {
-    var keys = Object.keys(object)
-    keys.forEach(key => {
-      var value = object[key]
-      this.element.setAttribute(key, value)
-    })
-  }
+styles.innerHTML = styleArray[0]
 
-  setAttributes() {
-    this.assignAttribute(this.attributes)
-    return this
-  }
 
-  setStyle() {
-    this.assignAttribute(this.styles)
-    return this
-  }
-
-  setHTML() {
-    this.element.innerHTML = this.textContent
-    return this
-  }
-
-  getElement() {
-    return this.element
-  }
-
-  static appendMany2One(many, one) {
-    many.forEach(each => one.appendChild(each))
-  }
-
-}
 // var json = {
 //   vertices: [0.5, 0.45, 0.8, 0.363, 0.44, 0.33, 0.4, 0.35],
 //   percents: [1, 0.8, 0.6, 0.4, 0.2, 0],
@@ -119,10 +100,10 @@ class Radar {
                     svg: ['svg', { class: '-radar', width, height, viewBox }, '', ''],
                     g: ['g', '', '', '']
                   }
-    var svg       = new Tag(svgProps['svg']).get()
-    var g         = new Tag(svgProps['g']).get()
+    var svg       = new TagNS(svgProps['svg']).get()
+    var g         = new TagNS(svgProps['g']).get()
     Object.keys(this.grids).map(key => {
-      var key_el = new Tag(this.grids[key]).get()
+      var key_el = new TagNS(this.grids[key]).get()
       g.appendChild(key_el)
     })
     svg.appendChild(g)
@@ -137,16 +118,6 @@ class Radar {
     this.getKeys().map(key => {
       var style = this.value(key, polyPoints)
       polyPoint[key] = ['polygon', { class: '-polygon', points: polyPoints[key]['points'].join(',')  }, { style }, '']
-      // return {
-        // shape: 'polygon',
-        // attributes: [
-        //   { name: 'points', value: polyPoints[key]['points'].join(',') },
-        //   { name: 'style', value },
-        // ],
-        // props: {
-        //   shape: ['polygon', { class: '-polygon' }, { style: value }, '', '']
-        // }
-      // }
     })
     return polyPoint
   }
@@ -172,21 +143,6 @@ class Radar {
     var y     = parseInt(pieces[1])
     var style = this.getStyle(x, 'text-anchor')
     style     += this.getStyle(y, 'dominant-baseline')
-    // if (parseInt(x) === 0) {
-    //   style += `text-anchor:${this.textPos['zero']['text-anchor']};`
-    // } else if (parseInt(x) > 0) {
-    //   style += `text-anchor:${this.textPos['plus']['text-anchor']};`
-    // } else if (parseInt(x) < 0) {
-    //   style += `text-anchor:${this.textPos['minus']['text-anchor']};`
-    // }
-
-    // if (parseInt(y) === 0) {
-    //   style += `dominant-baseline:${this.textPos['zero']['dominant-baseline']}`
-    // } else if (parseInt(y) > 0) {
-    //   style += `dominant-baseline:${this.textPos['plus']['dominant-baseline']}`
-    // } else {
-    //   style += `dominant-baseline:${this.textPos['minus']['dominant-baseline']}`
-    // }
     return style
   }
 
@@ -205,13 +161,6 @@ class Radar {
     vertices.map((item, idx) => {
       var style = 'stroke:#5e5e5e;stroke-width:0.5', d = `M 0 0 L ${item}`
       star[`star-${idx}`] = ['path', { d, class: '-d' }, { style }, '']
-      // return {
-      //   shape: 'path',
-      //   attributes: [
-      //     { name: 'd', value: `M 0 0 L ${item}` },
-      //     { name: 'style', value: 'stroke:#5e5e5e;stroke-width:0.5' }
-      //   ]
-      // }
     })
     return star
   }
@@ -295,24 +244,91 @@ class Radar {
   }
 }
 
+class RGraph extends HTMLElement {
+  constructor() {
+    super()
 
-// var vertices = [0.5, 0.45, 0.8, 0.363, 0.44, 0.33, 0.4, 0.35]
-// var rGraph = new RGraph(320, 320, vertices)
-// rGraph.draw()
+    this.attachShadow({ mode: 'open' })
+    this.shadowRoot.appendChild(styles.content)
+    this.appendParent()
 
-var el = document.querySelector('.-chart')
-var json = {
-  vertices: [0.5, 0.45, 0.8, 0.363, 0.44, 0.33, 0.4, 0.35],
-  percents: [1, 0.8, 0.6, 0.4, 0.2, 0],
-  colors: ['#94c277', '#bee894', '#f3f2a2', '#f1c354', '#f07377', '#000'],
-  size: 8,
-  width: 320,
-  height: 320,
-  categories: [
-    'bible', 'maths', 'software design', 'yoruba',
-    'music', 'physics', 'engineering', 'hardware design'
-  ],
-  el: el
+    this.el = this.shadowRoot.querySelector('.-chart')
+    new Radar(this.json(this.el))
+    // we append child to this.shadowRoot here
+  }
+
+  json(el) {
+    return {
+      vertices: this.vertices,
+      percents: [1, 0.8, 0.6, 0.4, 0.2, 0],
+      colors: ['#94c277', '#bee894', '#f3f2a2', '#f1c354', '#f07377', '#000'],
+      size: this.vertices.length,
+      width: 320,
+      height: 320,
+      categories: this.categories,
+      el: el
+    }
+  }
+
+  appendParent() {
+    var radarEl = document.createElement('div')
+    radarEl.className = '-chart'
+    this.shadowRoot.appendChild(radarEl)
+    // console.log('from build, list is', this.list instanceof Array)
+  }
+
+  static get observedAttributes() {
+    return ['categories', 'vertices']
+  }
+
+  get categories() {
+    return JSON.parse(this.getAttribute('categories'))
+  }
+
+  get vertices() {
+    return JSON.parse(this.getAttribute('vertices'))
+  }
+
+  set categories(value) {
+    this.setAttribute('categories', value)
+  }
+
+  set vertices(value) {
+    this.setAttribute('vertices', value)
+  }
+
+  connectedCallback() {
+    // when Component is added to the page
+    // listeners on the component automatically go here
+  }
+
+  get list() {
+    return JSON.parse(this.getAttribute('list'))
+  }
+
+  set value(val) {
+    this.setAttribute('value', val)
+  }
+
+  disconnectedCallback() {
+    // when Component is removed from the page
+    window.removeEventListener('selected', e => value = e.detail)
+  }
+
+  adoptedCallback() {
+    // when Component is moved to a new page
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    this.el.innerHTML = ""
+    new Radar(this.json(this.el))
+    // when Component attribute changes
+  }
+
+  get attribute() {
+    // return this.getAttribute('attribute')
+  }
+
 }
 
-new Radar(json)
+customElements.define('r-graph', RGraph)

@@ -3,15 +3,16 @@
   height: 543px;
 }
 .-student-profile .-profile {
-  border: 16px solid white;
+  
 }
 .-student-profile .-profile.-bio {
   width: 35%;
+  min-width: 320px;
   height: 100%;
 }
 
 .-student-profile .-profile.-details {
-  width: 65%;
+  width: calc(100% - 320px);
   height: 100%;
 }
 .-student-profile .-bio img {
@@ -23,8 +24,8 @@
 
 .-student-profile .-bio .-radargraph {
   width: 100%;
-  max-width: 280px;
-  height: 280px;
+  min-width: 320px;
+  height: 320px;
   margin: auto;
 }
 

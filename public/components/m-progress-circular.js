@@ -189,15 +189,6 @@ var styleArray = [
   `
 ]
 
-class Tag {
-  constructor() {}
-
-  static appendMany2One(many, one) {
-    many.forEach(each => one.appendChild(each))
-  }
-
-}
-
 class MProgressCircular extends HTMLElement {
   constructor() {
     super()

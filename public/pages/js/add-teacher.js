@@ -1,4 +1,4 @@
-var AddTeacher = {
+var AddTeacherComponent = {
   render: function () {
     return `
       <div class="-add-teacher -page">

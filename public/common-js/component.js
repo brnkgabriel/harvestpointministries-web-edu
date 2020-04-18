@@ -27,8 +27,9 @@ class Component {
       [this.modal, this.pages].map(el => el.classList.add('-hide'))
       this.authEl.classList.remove('-hide')
     }
-    this[this.parentEl].innerHTML = MinifiedHTML[this.name]
-    console.log('page name is', this.name)
+    // this[this.parentEl].innerHTML = MinifiedHTML[this.name]
+    this[this.parentEl].innerHTML = All[`${this.name}Component`].render()
+    console.log('hey name is', this.name)
   }
 
   tabListener() {
@@ -165,7 +166,7 @@ class CourseProfile extends Component {
   }
 }
 
-class ErrorComponent extends Component {
+class Error extends Component {
   constructor(path, parameter) {
     super(path, parameter)
     this.name = 'Error'

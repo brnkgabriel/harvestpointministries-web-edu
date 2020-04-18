@@ -1,4 +1,4 @@
-var AllCourse = {
+var AllCourseComponent = {
   render: function () {
     return `
       <div class="-all-course -page">

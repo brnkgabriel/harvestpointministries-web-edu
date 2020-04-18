@@ -1,4 +1,4 @@
-var AllStudents = {
+var AllStudentsComponent = {
   render: function () {
     return `
     <div class="-all-students -page">

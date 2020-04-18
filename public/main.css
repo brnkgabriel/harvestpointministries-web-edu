@@ -8,11 +8,11 @@
 @import url('./common-css/aside.css');
 @import url('./common-css/content.css');
 
-@import url('./pages/auth/auth.css');
-@import url('./pages/add-teacher/add-teacher.css');
-@import url('./pages/add-student/add-student.css');
-@import url('./pages/student-profile/student-profile.css');
-@import url('./pages/all-students/all-students.css');
+@import url('./pages/css/auth.css');
+@import url('./pages/css/add-teacher.css');
+@import url('./pages/css/add-student.css');
+@import url('./pages/css/student-profile.css');
+@import url('./pages/css/all-students.css');
 
 .-container {
   width: 100%;

@@ -1,4 +1,4 @@
-var CourseProfile = {
+var CourseProfileComponent = {
   render: function () {
     return `
       <div class="-course-profile -page">

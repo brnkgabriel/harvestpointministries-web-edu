@@ -1,4 +1,4 @@
-var TeacherProfile = {
+var TeacherProfileComponent = {
   render: function () {
     return `
       <div class="-teacher-profile -page">
