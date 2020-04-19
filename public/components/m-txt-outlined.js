@@ -1,10 +1,9 @@
-var styleArray = [
+var styleTxt = [
   `
     <style>
     label span,
     label input {
       font-family: var(--font);
-      font-weight: bold;
     }
 
     .checkboxes > label,
@@ -65,7 +64,8 @@ var styleArray = [
       font-family: var(--font);
       font-size: 16px;
       line-height: 1.5;
-      overflow: hidden
+      overflow: hidden;
+      width: var(--txt-width)
     }
     
     /* input, textarea */
@@ -265,7 +265,7 @@ class MTxtOutlined extends HTMLElement {
 
   styles() {
     var styles = document.createElement('template')
-    styles.innerHTML = styleArray[0]
+    styles.innerHTML = styleTxt[0]
     return styles.content
   }
 

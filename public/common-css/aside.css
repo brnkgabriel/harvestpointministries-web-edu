@@ -150,7 +150,8 @@
   color: var(--gray);
   text-transform: capitalize;
   position: static;
-  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-size: 1.1em;
 }
 
 .-aside.-icons-only .-mid .-mid-item .txt {
@@ -195,12 +196,14 @@
   text-transform: capitalize;
   color: var(--gray);
   line-height: 44px;
-  font-weight: 400;
   font-size: 0.9em;
   background-color: rgba(0,0,0,0);
   position: relative;
   display: block;
   text-decoration: none;
+  font-family: var(--font-complement);
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .-aside .-mid .-mid-item .-sub-item .-sub::before,

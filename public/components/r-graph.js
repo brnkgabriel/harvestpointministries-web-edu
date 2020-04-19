@@ -7,14 +7,14 @@
 
 var styles = document.createElement('template')
 
-var styleArray = [
+var styleGraph = [
   `
     <style>
     .-chart {
       width: 320px;
       height: 320px;
       display: inline-block;
-      font-family: var(--font);
+      font-family: var(--font-complement);
       font-weight: bold;
     }
     
@@ -197,7 +197,7 @@ class Radar {
 
   value(key, polyPoints) {
     if (key === '_0')
-      return `stroke:#000;stroke-width:8;fill:none`
+      return `stroke:#000;stroke-width:4;fill:none`
     return `stroke:#5e5e5e;stroke-width:1;fill:${polyPoints[key]['color']}`
   }
 
@@ -259,7 +259,7 @@ class RGraph extends HTMLElement {
 
   styles() {
     var styles = document.createElement('template')
-    styles.innerHTML = styleArray[0]
+    styles.innerHTML = styleGraph[0]
     return styles.content
   }
 

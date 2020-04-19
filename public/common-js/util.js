@@ -111,15 +111,15 @@ class Listeners {
   tabListener() {
     var tab_contents = document.querySelectorAll('.-tab-content')
     var tabs = document.querySelectorAll('.-tab')
-    tabs.forEach((tab, idx) => this.tabListen(tab, tab_contents, idx))
+    tabs.forEach((_, idx) => this.tabListen(tabs, tab_contents, idx))
     return this
   }
 
-  tabListen(tab, tab_contents, idx) {
+  tabListen(tabs, tab_contents, idx) {
     var self = this
-    tab.addEventListener('click', function () {
+    tabs[idx].addEventListener('click', function () {
       self.removeAddActive(tab_contents, tab_contents[idx])
-      self.removeAddActive(tabs, tab)
+      self.removeAddActive(tabs, tabs[idx])
     })
   }
 
@@ -129,6 +129,14 @@ class Listeners {
   }
 
   modalListener() {
+    var close   = document.querySelector('.md-close')
+    var overlay = document.querySelector('.md-overlay');
+    [close, overlay].map(el => el.addEventListener('click', () => { this.closeModal() }))
     return this
+  }
+
+  closeModal () {
+    var modal = document.getElementById('modal')
+    modal.classList.remove('md-show')
   }
 }

@@ -30,9 +30,6 @@ var StudentProfileComponent = {
         <div class="-points">
           <div class="-caption">points</div><div class="-value">3,240</div>
         </div>
-        <div class="-description">
-          <div class="-caption">description</div><div class="-value">I love coding</div>
-        </div>
       </div>
     </div><div class="-details -profile -inlineblock -vatop -bg-white">
       <div class="-tabs">
@@ -45,7 +42,9 @@ var StudentProfileComponent = {
       </div>
       <div class="-tab-contents">
         <div class="-tab-content -account active">
-          form
+          <div class="-form">
+            <m-txt-outlined class="-element -fullname" value="" placeholder="Full Name..."></m-txt-outlined><m-txt-outlined class="-element -fullname" value="" placeholder="Code Name..."></m-txt-outlined><m-txt-outlined class="-element -email" value="" placeholder="Email..."></m-txt-outlined><m-select value='Male' list='["Male", "Female"]'></m-select>
+          </div>
         </div>
         <div class="-tab-content">
           <div class="-courses -inlineblock -vatop">

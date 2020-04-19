@@ -13,7 +13,7 @@
 <body>
   <div class="-container">
     <div class="-signup" id="auth"></div>
-    <div class="-modal" id="modal">
+    <div class="-modal">
       <div class="md-modal md-effect" id="modal">
         <div class="md-content">
           <h3>Modal Dialog</h3>
@@ -26,7 +26,8 @@
                 appreciate its presence.</li>
               <li><strong>Close:</strong> click on the button below to close the modal.</li>
             </ul>
-            <button class="md-close">Close me!</button>
+            <!-- <button class="md-close">Close me!</button> -->
+            <m-btn-contained class="md-close" text="close me"></m-btn-contained>
           </div>
         </div>
       </div>
@@ -34,7 +35,7 @@
     </div>
     <div class="-pages" id="pages">
       <div class="-header -posrel">
-        <div id="nav-icon" class="-posabs open">
+        <div id="nav-icon" class="-posabs">
           <span></span>
           <span></span>
           <span></span>
@@ -59,7 +60,7 @@
         </div>
       </div>
       <div class="-main">
-        <div class="-aside -col -inlineblock -vatop">
+        <div class="-aside -col -inlineblock -vatop -offscreen">
           <div class="-mid">
             <div class="-mid-item">
               <div class="-item">

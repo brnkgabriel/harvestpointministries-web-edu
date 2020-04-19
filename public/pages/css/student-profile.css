@@ -22,6 +22,10 @@
 
 }
 
+.-form .-element {
+  width: 50%;
+}
+
 .-student-profile .-bio .-radargraph {
   width: 100%;
   min-width: 320px;

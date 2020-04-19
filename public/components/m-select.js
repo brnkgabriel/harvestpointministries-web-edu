@@ -7,7 +7,7 @@
 
 var globalId = 0
 
-var styleArray = [
+var styleSelect = [
   `
     <style>
 
@@ -140,7 +140,7 @@ var styleArray = [
       border-radius: 2px;
       box-shadow: 1px 2px 3px 1px rgba(0,0,0,0.3);
       top: -96px;
-      height: 250px;
+      height: 144px;
       z-index: 99999;
     }
 
@@ -258,7 +258,7 @@ class SelectElement {
     var selected = this.doc.querySelector('li[data-selected]')
     var pos      = Math.max((this.index(selected) - 2) * 48, 0)
     parent.classList.add('isOpen')
-    parent.style.overflow = 'auto'
+    parent.style.overflow = 'hidden'
     parent.scrollTop = pos
   }
 
@@ -311,7 +311,7 @@ class MSelect extends HTMLElement {
 
   styles() {
     var styles = document.createElement('template')
-    styles.innerHTML = styleArray[0]
+    styles.innerHTML = styleSelect[0]
     return styles.content
   }
 

@@ -10,11 +10,28 @@
   text-align: left;
 }
 .-all-students .-table .-row:not(.-head) {
-  cursor: pointer
+  cursor: pointer;
+  position: relative;
+  border: 1px solid var(--bg-color)
+}
+
+.-all-students .-table .-row:not(.-head)::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0,0,0,0.2)
+}
+
+.-all-students .-table .-row:not(.-head):hover::before {
+  display: block
 }
 
 .-all-students .-table .-row:not(.-head):hover .-col {
-  text-decoration: underline
+  /* text-decoration: underline */
 }
 
 .-all-students .-table .-row:nth-child(odd) {
@@ -35,7 +52,8 @@
 }
 
 .-all-students .-table .-row .-col.-position {
-  width: 20%
+  width: 20%;
+  margin-left: 2.5%
 }
 .-all-students .-table .-row .-col.-codename {
   width: 35%
@@ -43,10 +61,12 @@
 
 .-all-students .-table .-row .-col.-aggregate {
   width: 20%;
+  text-align: right
 }
 
 .-all-students .-table .-row .-col.-prize {
   width: 20%;
+  text-align: right
 }
 
 .-all-students .-table .-row.-head  .-col {

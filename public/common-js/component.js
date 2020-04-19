@@ -1,21 +1,21 @@
 class Component {
   constructor(json) {
-    this.users      = null
-    this.parameter  = json['parameter']
-    this.appEl      = document.getElementById('app')
-    this.authEl     = document.getElementById('auth')
-    this.modal      = document.getElementById('modal')
-    this.pages      = document.getElementById('pages')
-    this.user       = new User()
-    this.datastore  = json['datastore']
-    this.parentEl   = json['parentEl']
+    this.users = null
+    this.parameter = json['parameter']
+    this.appEl = document.getElementById('app')
+    this.authEl = document.getElementById('auth')
+    this.modal = document.getElementById('modal')
+    this.pages = document.getElementById('pages')
+    this.user = new User()
+    this.datastore = json['datastore']
+    this.parentEl = json['parentEl']
 
     window.addEventListener('firestore', (e) => { this.update(e) })
   }
 
   update() {
     if (e.msg === 'success') this.users = e.detail
-    else {}
+    else { }
   }
 
   render() {
@@ -32,25 +32,10 @@ class Component {
     console.log('hey name is', this.name)
   }
 
-  tabListener() {
-    var self = this
-    var tab_contents  = document.querySelectorAll('.-tab-content')
-    var tabs          = document.querySelectorAll('.-tab')
-    tabs.forEach((tab, idx) => {
-      tab.addEventListener('click', function () {
-        self.removeAddActive(tab_contents, tab_contents[idx])
-        self.removeAddActive(tabs, tab)
-      })
-    })
-  }
-
-  removeAddActive(toRemove, toAdd) {
-    toRemove.forEach(each => each.classList.remove('active'))
-    toAdd.classList.add('active')
-  }
-
   run() {
-    this.tabListener()
+    new Listeners()
+      .tabListener()
+      .modalListener()
   }
 }
 
@@ -71,9 +56,9 @@ class Auth extends Component {
     // because the run function executes after the they've been rendered
     // if they were put in the constructor they wouldn't have been rendered and so
     // will be null
-    this.login    = document.getElementById('login')
+    this.login = document.getElementById('login')
     this.password = document.getElementById('password')
-    this.submit   = document.getElementById('submit')
+    this.submit = document.getElementById('submit')
     var self = this
     // this.submit.addEventListener('click', function () {
     //   var username = self.login.value
@@ -84,15 +69,15 @@ class Auth extends Component {
 
   signIn(email, password) {
     this.datastore.auth.signInWithEmailAndPassword(email, password)
-    .then(function (result) {
-      localStorage.setItem('firebaseui::rememberedAccounts', result['user']['email'])
-      location.reload()
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log('errorCode', errorCode, 'errorMessage', errorMessage)
-    });
+      .then(function (result) {
+        localStorage.setItem('firebaseui::rememberedAccounts', result['user']['email'])
+        location.reload()
+      }).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log('errorCode', errorCode, 'errorMessage', errorMessage)
+      });
   }
 }
 
@@ -146,6 +131,15 @@ class AddStudent extends Component {
   constructor(path, parameter) {
     super(path, parameter)
     this.name = 'AddStudent'
+  }
+
+  run() {
+    var addStudent = document.querySelector('.-student.-add')
+    var modal = document.getElementById('modal')
+    console.log('modal is', modal)
+    addStudent.addEventListener('click', function () {
+      modal.classList.add('md-show')
+    })
   }
 }
 

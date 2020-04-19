@@ -4,7 +4,7 @@ var AddStudentComponent = {
     <div class="-add-student -page">
     <div class="-title">recent students</div>
     <div class="-students">
-      <div class="-student -new -posrel -card">
+      <div class="-student -add -posrel -card">
         <span class="-txt -posabs">add Student</span>
       </div><a href="#/student-profile?st=Wumight" class="-student -other -card">
         <div class="-name -code">Wumight</div>
