@@ -39,7 +39,11 @@
   --user-light: #fff3d9;
   --bg-white: white;
   --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-complement: 'Comic Neue'
+  --font-complement: 'Comic Neue';
+  --pure-material-primary-rgb: 33, 150, 243;
+  --pure-material-onprimary-rgb: 255, 255, 255;
+  --pure-material-surface-rgb: 255, 255, 255;
+  --pure-material-onsurface-rgb: 0, 0, 0
 }
 
 html {
@@ -298,8 +302,7 @@ div>.-title {
 }
 
 .md-content {
-  color: #fff;
-  background: #e74c3c;
+  background: white;
   position: relative;
   border-radius: 3px;
   margin: 0 auto;
@@ -324,7 +327,8 @@ div>.-title {
   font-size: 2.4em;
   font-weight: 300;
   opacity: 0.8;
-  background: rgba(0,0,0,0.1);
+  background: rgba(var(--pure-material-primary-rgb));
+  color: white;
   border-radius: 3px 3px 0 0;
 }
 .md-content > div {

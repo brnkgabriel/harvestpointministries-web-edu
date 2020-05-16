@@ -1,7 +1,6 @@
 
 .-aside {
   width: 220px;
-  background-color: var(--asideColor)
 }
 
 .-aside.-icons-only {
@@ -15,7 +14,7 @@
   line-height: 50px
 }
 .-aside .-mid {
-
+  background-color: white;
 }
 
 .-aside .-mid .-mid-item,
@@ -72,7 +71,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  filter: brightness(0%) saturate(100%) invert(82%) sepia(14%) saturate(327%) hue-rotate(167deg) brightness(92%) contrast(85%);
+  filter: brightness(0%) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(327deg) brightness(96%) contrast(104%);
   z-index: 1;
 }
 
@@ -123,8 +122,8 @@
   position: absolute;
   width: 8px;
   height: 8px;
-  border-top: 2px solid var(--gray);
-  border-right: 2px solid var(--gray);
+  border-top: 2px solid;
+  border-right: 2px solid;
   top: 50%;
   right: 8%;
   transform: translateY(-50%) rotate(135deg);
@@ -139,15 +138,13 @@
 }
 
 .-aside .-mid .-mid-item .-item:hover::after {
-  border-top: 2px solid white;
-  border-right: 2px solid white;
+  
 }
 
 .-aside .-mid .-mid-item .txt {
   display: inline-block;
   vertical-align: middle;
   margin-left: 10px;
-  color: var(--gray);
   text-transform: capitalize;
   position: static;
   font-weight: 500;
@@ -170,7 +167,7 @@
 }
 
 .-aside .-mid .-mid-item .-item:hover .txt {
-  color: white
+  /* color: white */
 }
 .-aside .-foot {
   background-color: #374b5e;
@@ -197,7 +194,6 @@
   color: var(--gray);
   line-height: 44px;
   font-size: 0.9em;
-  background-color: rgba(0,0,0,0);
   position: relative;
   display: block;
   text-decoration: none;
@@ -277,8 +273,7 @@
   background-color: #25313e;
 }
 .-aside .-foot .-show-hide:hover::after {
-  border-top: 2px solid white;
-  border-right: 2px solid white;
+  
 }
 
 @media screen and (max-width: 767px) {
